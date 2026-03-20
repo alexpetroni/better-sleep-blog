@@ -1,6 +1,6 @@
 <script lang="ts">
   import { enhance, applyAction } from "$app/forms"
-  import { page } from "$app/stores"
+  import { page } from "$app/state"
   import type { SubmitFunction } from "@sveltejs/kit"
 
   const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
@@ -109,10 +109,10 @@
               type={field.inputType ?? "text"}
               disabled={!editable}
               placeholder={field.placeholder ?? field.label ?? ""}
-              class="{fieldError($page?.form, field.id)
+              class="{fieldError(page?.form, field.id)
                 ? 'input-error'
                 : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"
-              value={$page.form ? $page.form[field.id] : field.initialValue}
+              value={page.form ? page.form[field.id] : field.initialValue}
               maxlength={field.maxlength ? field.maxlength : null}
             />
           {:else}
@@ -120,9 +120,9 @@
           {/if}
         {/each}
 
-        {#if $page?.form?.errorMessage}
+        {#if page?.form?.errorMessage}
           <p class="text-red-700 text-sm font-bold mt-1">
-            {$page?.form?.errorMessage}
+            {page?.form?.errorMessage}
           </p>
         {/if}
 
@@ -146,14 +146,13 @@
           </div>
         {:else if editButtonTitle && editLink}
           <!-- !editable -->
-          <a href={editLink} class="mt-1">
-            <button
-              class="btn btn-outline btn-sm {dangerous
-                ? 'btn-error'
-                : ''} min-w-[145px]"
-            >
-              {editButtonTitle}
-            </button>
+          <a
+            href={editLink}
+            class="btn btn-outline btn-sm mt-1 {dangerous
+              ? 'btn-error'
+              : ''} min-w-[145px]"
+          >
+            {editButtonTitle}
           </a>
         {/if}
       </form>
@@ -163,10 +162,8 @@
         <div class="text-l font-bold">{successTitle}</div>
         <div class="text-base">{successBody}</div>
       </div>
-      <a href="/account/settings">
-        <button class="btn btn-outline btn-sm mt-3 min-w-[145px]">
-          Return to Settings
-        </button>
+      <a href="/account/settings" class="btn btn-outline btn-sm mt-3 min-w-[145px]">
+        Return to Settings
       </a>
     {/if}
   </div>

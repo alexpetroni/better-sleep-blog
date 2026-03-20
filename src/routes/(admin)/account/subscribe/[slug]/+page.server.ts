@@ -5,6 +5,7 @@ import {
   fetchSubscription,
   getOrCreateCustomerId,
 } from "../../subscription_helpers.server"
+import { pricingPlans } from "../../../../(marketing)/pricing/pricing_plans"
 import type { PageServerLoad } from "./$types"
 const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 
@@ -21,6 +22,13 @@ export const load: PageServerLoad = async ({
   if (params.slug === "free_plan") {
     // plan with no stripe_price_id. Redirect to account home
     redirect(303, "/account")
+  }
+
+  const validPriceIds = pricingPlans
+    .map((plan) => plan.stripe_price_id)
+    .filter((id): id is string => id !== null)
+  if (!validPriceIds.includes(params.slug)) {
+    error(400, "Invalid price ID")
   }
 
   const { error: idError, customerId } = await getOrCreateCustomerId({

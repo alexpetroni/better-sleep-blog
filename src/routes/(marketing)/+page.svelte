@@ -284,14 +284,12 @@
       <div
         class="mt-6 md:mt-4 flex flex-row flex-wrap gap-4 place-content-center"
       >
-        <a href="https://github.com/CriticalMoments/CMSaasStarter">
-          <button class="btn btn-primary px-6">★ us on Github</button>
-        </a>
+        <a href="https://github.com/CriticalMoments/CMSaasStarter" class="btn btn-primary px-6">★ us on Github</a>
         <a
           href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
+          class="btn btn-outline btn-primary px-6"
         >
-          <button class="btn btn-outline btn-primary px-6">Read the Docs</button
-          >
+          Read the Docs
         </a>
       </div>
     </div>
@@ -418,11 +416,9 @@
               > is the best example of SaaS Starter with style and real content.
             </div>
             <div class="mt-4 text-large">
-              <a href="https://criticalmoments.io" target="_blank">
-                <button class="btn btn-primary btn-wide mt-3"
-                  >See it in Action</button
-                >
-              </a>
+              <a href="https://criticalmoments.io" target="_blank" class="btn btn-primary btn-wide mt-3"
+                >See it in Action</a
+              >
             </div>
           </div>
         </div>

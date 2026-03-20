@@ -1,6 +1,5 @@
 <script lang="ts">
   import "../../../../app.css"
-  import { writable } from "svelte/store"
   import { setContext } from "svelte"
   import { WebsiteName } from "../../../../config"
   interface Props {
@@ -9,18 +8,14 @@
 
   let { children }: Props = $props()
 
-  const adminSectionStore = writable("")
-  setContext("adminSection", adminSectionStore)
-  let adminSection: string | undefined = $state()
-  adminSectionStore.subscribe((value) => {
-    adminSection = value
-  })
+  const adminSection = $state({ value: "" })
+  setContext("adminSection", adminSection)
 
   function closeDrawer(): void {
-    const adminDrawer = document.getElementById(
-      "admin-drawer",
-    ) as HTMLInputElement
-    adminDrawer.checked = false
+    const adminDrawer = document.getElementById("admin-drawer")
+    if (adminDrawer instanceof HTMLInputElement) {
+      adminDrawer.checked = false
+    }
   }
 </script>
 
@@ -72,7 +67,7 @@
       <li>
         <a
           href="/account"
-          class={adminSection === "home" ? "active" : ""}
+          class={adminSection.value === "home" ? "active" : ""}
           onclick={closeDrawer}
         >
           <svg
@@ -94,7 +89,7 @@
       <li>
         <a
           href="/account/billing"
-          class={adminSection === "billing" ? "active" : ""}
+          class={adminSection.value === "billing" ? "active" : ""}
           onclick={closeDrawer}
         >
           <svg
@@ -113,7 +108,7 @@
       <li>
         <a
           href="/account/settings"
-          class={adminSection === "settings" ? "active" : ""}
+          class={adminSection.value === "settings" ? "active" : ""}
           onclick={closeDrawer}
         >
           <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="none" fill="none">

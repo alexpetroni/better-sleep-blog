@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { page } from "$app/stores"
+  import { page } from "$app/state"
   import { getContext } from "svelte"
-  import type { Writable } from "svelte/store"
   import SettingsModule from "../settings_module.svelte"
 
-  let adminSection: Writable<string> = getContext("adminSection")
-  adminSection.set("settings")
+  const adminSection: { value: string } = getContext("adminSection")
+  adminSection.value = "settings"
 
   let { data } = $props()
   let { user, supabase } = data
@@ -32,7 +31,7 @@
     if (email) {
       supabase.auth
         .resetPasswordForEmail(email, {
-          redirectTo: `${$page.url.origin}/auth/callback?next=%2Faccount%2Fsettings%2Freset_password`,
+          redirectTo: `${page.url.origin}/auth/callback?next=%2Faccount%2Fsettings%2Freset_password`,
         })
         .then((d) => {
           sentEmail = d.error ? false : true

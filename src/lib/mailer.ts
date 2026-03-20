@@ -14,10 +14,10 @@ export const sendAdminEmail = async ({
 }: {
   subject: string
   body: string
-}) => {
+}): Promise<{ success: boolean }> => {
   // Check admin email is setup
   if (!env.PRIVATE_ADMIN_EMAIL) {
-    return
+    return { success: false }
   }
 
   try {
@@ -31,10 +31,25 @@ export const sendAdminEmail = async ({
 
     if (resp.error) {
       console.log("Failed to send admin email, error:", resp.error)
+      return { success: false }
     }
+    return { success: true }
   } catch (e) {
     console.log("Failed to send admin email, error:", e)
+    return { success: false }
   }
+}
+
+let _serviceRoleClient: ReturnType<typeof createClient<Database>> | null = null
+function getServiceRoleClient() {
+  if (!_serviceRoleClient) {
+    _serviceRoleClient = createClient<Database>(
+      PUBLIC_SUPABASE_URL,
+      PRIVATE_SUPABASE_SERVICE_ROLE,
+      { auth: { persistSession: false } },
+    )
+  }
+  return _serviceRoleClient
 }
 
 export const sendUserEmail = async ({
@@ -49,20 +64,16 @@ export const sendUserEmail = async ({
   from_email: string
   template_name: string
   template_properties: Record<string, string>
-}) => {
+}): Promise<{ success: boolean }> => {
   const email = user.email
   if (!email) {
     console.log("No email for user. Aborting email. ", user.id)
-    return
+    return { success: false }
   }
 
   // Check if the user email is verified using the full user object from service role
   // Oauth uses email_verified, and email auth uses email_confirmed_at
-  const serverSupabase = createClient<Database>(
-    PUBLIC_SUPABASE_URL,
-    PRIVATE_SUPABASE_SERVICE_ROLE,
-    { auth: { persistSession: false } },
-  )
+  const serverSupabase = getServiceRoleClient()
   const { data: serviceUserData } = await serverSupabase.auth.admin.getUserById(
     user.id,
   )
@@ -72,7 +83,7 @@ export const sendUserEmail = async ({
 
   if (!emailVerified) {
     console.log("User email not verified. Aborting email. ", user.id, email)
-    return
+    return { success: false }
   }
 
   // Fetch user profile to check unsubscribed status
@@ -84,15 +95,15 @@ export const sendUserEmail = async ({
 
   if (profileError) {
     console.log("Error fetching user profile. Aborting email. ", user.id, email)
-    return
+    return { success: false }
   }
 
   if (profile?.unsubscribed) {
     console.log("User unsubscribed. Aborting email. ", user.id, email)
-    return
+    return { success: false }
   }
 
-  await sendTemplatedEmail({
+  return await sendTemplatedEmail({
     subject,
     to_emails: [email],
     from_email,
@@ -113,10 +124,10 @@ export const sendTemplatedEmail = async ({
   from_email: string
   template_name: string
   template_properties: Record<string, string>
-}) => {
+}): Promise<{ success: boolean }> => {
   if (!env.PRIVATE_RESEND_API_KEY) {
     // email not configured.  Emails are optional so no error is thrown
-    return
+    return { success: false }
   }
 
   let plaintextBody: string | undefined = undefined
@@ -148,29 +159,29 @@ export const sendTemplatedEmail = async ({
       "No email body: requires plaintextBody or htmlBody. Template: ",
       template_name,
     )
-    return
+    return { success: false }
   }
 
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const email: any = {
-      from: from_email,
-      to: to_emails,
-      subject: subject,
-    }
-    if (plaintextBody) {
-      email.text = plaintextBody
-    }
-    if (htmlBody) {
-      email.html = htmlBody
-    }
     const resend = new Resend(env.PRIVATE_RESEND_API_KEY)
-    const resp = await resend.emails.send(email)
+    const baseOptions = { from: from_email, to: to_emails, subject: subject }
+
+    let resp
+    if (htmlBody) {
+      resp = plaintextBody
+        ? await resend.emails.send({ ...baseOptions, html: htmlBody, text: plaintextBody })
+        : await resend.emails.send({ ...baseOptions, html: htmlBody })
+    } else {
+      resp = await resend.emails.send({ ...baseOptions, text: plaintextBody! })
+    }
 
     if (resp.error) {
       console.log("Failed to send email, error:", resp.error)
+      return { success: false }
     }
+    return { success: true }
   } catch (e) {
     console.log("Failed to send email, error:", e)
+    return { success: false }
   }
 }

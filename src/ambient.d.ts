@@ -6,6 +6,8 @@ declare global {
     companyName?: string
     website?: string
     email?: string
+    success?: boolean
+    unsubscribed?: boolean
   }
 }
 

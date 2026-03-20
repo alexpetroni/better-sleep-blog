@@ -1,71 +1,92 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@plugin '@tailwindcss/typography';
-@plugin "daisyui" {
-  /* Disable all other themes which forces the default theme created below. You can add a dark mode theme using daisyui if you like, and it will automatically use it when the user's system is in dark mode. Docs: https://daisyui.com/docs/themes/ */
-  themes: false;
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: hsl(40 80% 98%);
+  --foreground: hsl(262 100% 13%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(262 100% 13%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(262 100% 13%);
+  --primary: hsl(262 100% 13%);
+  --primary-foreground: hsl(40 80% 98%);
+  --secondary: hsl(253 82% 85%);
+  --secondary-foreground: hsl(262 100% 13%);
+  --muted: hsl(34 86% 91%);
+  --muted-foreground: hsl(260 16% 45%);
+  --accent: hsl(333 82% 95%);
+  --accent-foreground: hsl(333 71% 35%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --success: hsl(157 59% 52%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(45 93% 58%);
+  --warning-foreground: hsl(38 30% 15%);
+  --border: hsl(34 30% 88%);
+  --input: hsl(34 30% 88%);
+  --ring: hsl(262 100% 13%);
+  --highlight: hsl(333 71% 51%);
+  --sidebar: hsl(40 80% 98%);
+  --sidebar-foreground: hsl(262 100% 13%);
+  --sidebar-primary: hsl(262 100% 13%);
+  --sidebar-primary-foreground: hsl(40 80% 98%);
+  --sidebar-accent: hsl(34 86% 91%);
+  --sidebar-accent-foreground: hsl(262 100% 13%);
+  --sidebar-border: hsl(34 30% 88%);
+  --sidebar-ring: hsl(262 100% 13%);
+  --radius: 0.5rem;
 }
 
-@plugin "daisyui/theme" {
-  name: "saasstartertheme";
-  default: true; /* set as default */
-  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
-  color-scheme: light; /* color of browser-provided UI */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
-  --color-primary: #180042;
-  --color-primary-content: #fefbf6;
-  --color-secondary: #c7b9f8;
-  --color-secondary-content: oklch(95% 0 0);
-  --color-accent: #db2777;
-  --color-accent-content: #180042;
-  --color-neutral: #180042;
-  --color-neutral-content: #fefbf6;
-  --color-base-100: #fefbf6;
-  --color-base-200: #faedd6;
-  --color-base-300: oklch(92% 0.04 240);
-  --color-base-content: #180042;
-  --color-info: oklch(70% 0.2 220);
-  --color-info-content: oklch(98% 0.01 220);
-  --color-success: #37d399;
-  --color-success-content: oklch(98% 0.01 140);
-  --color-warning: oklch(80% 0.25 80);
-  --color-warning-content: oklch(20% 0.05 80);
-  --color-error: #f77272;
-  --color-error-content: oklch(98% 0.01 30);
-
-  /* border radius */
-  --radius-selector: 1rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-
-  /* base sizes */
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-
-  /* border size */
-  --border: 1px;
-
-  /* effects */
-  --depth: 1;
-  --noise: 0;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-highlight: var(--highlight);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/*
-  Tailwind CSS v4 Migration:
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
@@ -73,9 +94,9 @@ a {
   @apply cursor-pointer;
 }
 
-/* Hack to temporarily solve https://github.com/supabase/auth-ui/issues/219 */
+/* Supabase Auth UI button styling */
 .authBtn {
-  @apply btn;
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2;
 }
 button[disabled].authBtn {
   font-size: 0.001px;
@@ -84,5 +105,5 @@ button[disabled].authBtn {
 button[disabled].authBtn::before {
   font-size: 14px;
   content: "Loading...";
-  color: oklch(var(--pc));
+  color: var(--primary-foreground);
 }

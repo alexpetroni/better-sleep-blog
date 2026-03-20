@@ -3,7 +3,7 @@
   import { sharedAppearance, oauthProviders } from "../login_config"
   import { goto } from "$app/navigation"
   import { onMount } from "svelte"
-  import { page } from "$app/stores"
+  import { page } from "$app/state"
 
   let { data } = $props()
   let { supabase } = data
@@ -27,7 +27,7 @@
   <title>Sign in</title>
 </svelte:head>
 
-{#if $page.url.searchParams.get("verified") == "true"}
+{#if page.url.searchParams.get("verified") == "true"}
   <div role="alert" class="alert alert-success mb-5">
     <svg
       xmlns="http://www.w3.org/2000/svg"

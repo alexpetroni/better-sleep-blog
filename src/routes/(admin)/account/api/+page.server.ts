@@ -39,7 +39,7 @@ export const actions = {
     }
 
     const formData = await request.formData()
-    const email = formData.get("email") as string
+    const email = formData.get("email")?.toString() ?? ""
 
     let validationError
     if (!email || email === "") {
@@ -82,9 +82,9 @@ export const actions = {
     }
 
     const formData = await request.formData()
-    const newPassword1 = formData.get("newPassword1") as string
-    const newPassword2 = formData.get("newPassword2") as string
-    const currentPassword = formData.get("currentPassword") as string
+    const newPassword1 = formData.get("newPassword1")?.toString() ?? ""
+    const newPassword2 = formData.get("newPassword2")?.toString() ?? ""
+    const currentPassword = formData.get("currentPassword")?.toString() ?? ""
 
     // Can check if we're a "password recovery" session by checking session amr
     // let currentPassword take priority if provided (user can use either form)
@@ -100,8 +100,8 @@ export const actions = {
           errorMessage:
             'Recovery code expired. Please log out, then use "Forgot Password" on the sign in page to reset your password. Codes are valid for 15 minutes.',
           errorFields: [],
-          newPassword1,
-          newPassword2,
+          newPassword1: "",
+          newPassword2: "",
           currentPassword: "",
         })
       }
@@ -118,14 +118,14 @@ export const actions = {
       errorFields.push("newPassword2")
     }
     if (newPassword1.length < 6) {
-      validationError = "The new password must be at least 6 charaters long"
+      validationError = "The new password must be at least 6 characters long"
       errorFields.push("newPassword1")
     }
     if (newPassword1.length > 72) {
-      validationError = "The new password can be at most 72 charaters long"
+      validationError = "The new password can be at most 72 characters long"
       errorFields.push("newPassword1")
     }
-    if (newPassword1 != newPassword2) {
+    if (newPassword1 !== newPassword2) {
       validationError = "The passwords don't match"
       errorFields.push("newPassword1")
       errorFields.push("newPassword2")
@@ -139,9 +139,9 @@ export const actions = {
       return fail(400, {
         errorMessage: validationError,
         errorFields: [...new Set(errorFields)], // unique values
-        newPassword1,
-        newPassword2,
-        currentPassword,
+        newPassword1: "",
+        newPassword2: "",
+        currentPassword: "",
       })
     }
 
@@ -166,16 +166,14 @@ export const actions = {
       console.error("Error updating password", error)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
-        newPassword1,
-        newPassword2,
-        currentPassword,
+        newPassword1: "",
+        newPassword2: "",
+        currentPassword: "",
       })
     }
 
     return {
-      newPassword1,
-      newPassword2,
-      currentPassword,
+      success: true,
     }
   },
   deleteAccount: async ({
@@ -188,14 +186,14 @@ export const actions = {
     }
 
     const formData = await request.formData()
-    const currentPassword = formData.get("currentPassword") as string
+    const currentPassword = formData.get("currentPassword")?.toString() ?? ""
 
     if (!currentPassword) {
       return fail(400, {
         errorMessage:
           "You must provide your current password to delete your account. If you forgot it, sign out then use 'forgot password' on the sign in page.",
         errorFields: ["currentPassword"],
-        currentPassword,
+        currentPassword: "",
       })
     }
 
@@ -217,7 +215,7 @@ export const actions = {
       console.error("Error deleting user", error)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
-        currentPassword,
+        currentPassword: "",
       })
     }
 
@@ -231,9 +229,9 @@ export const actions = {
     }
 
     const formData = await request.formData()
-    const fullName = formData.get("fullName") as string
-    const companyName = formData.get("companyName") as string
-    const website = formData.get("website") as string
+    const fullName = formData.get("fullName")?.toString() ?? ""
+    const companyName = formData.get("companyName")?.toString() ?? ""
+    const website = formData.get("website")?.toString() ?? ""
 
     let validationError
     const fieldMaxTextLength = 50
