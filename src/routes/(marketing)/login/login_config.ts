@@ -3,21 +3,21 @@ import type { Provider } from "@supabase/supabase-js"
 
 export const oauthProviders = ["github"] as Provider[]
 
-// use the css variables from DaisyUI to style Supabase auth template
+// use CSS variables to style Supabase auth template
 export const sharedAppearance = {
   theme: ThemeSupa,
   variables: {
     default: {
       colors: {
-        brand: "oklch(var(--p))",
-        brandAccent: "oklch(var(--ac))",
-        inputText: "oklch(var(--n))",
-        brandButtonText: "oklch(var(--pc))",
-        messageText: "oklch(var(--b))",
-        dividerBackground: "oklch(var(--n))",
-        inputLabelText: "oklch(var(--n))",
-        defaultButtonText: "oklch(var(--n))",
-        anchorTextColor: "oklch(var(--p))",
+        brand: "hsl(262 100% 13%)",
+        brandAccent: "hsl(333 71% 51%)",
+        inputText: "hsl(262 100% 13%)",
+        brandButtonText: "hsl(40 80% 98%)",
+        messageText: "hsl(262 100% 13%)",
+        dividerBackground: "hsl(262 100% 13%)",
+        inputLabelText: "hsl(262 100% 13%)",
+        defaultButtonText: "hsl(262 100% 13%)",
+        anchorTextColor: "hsl(262 100% 13%)",
       },
       fontSizes: {
         baseInputSize: "16px",

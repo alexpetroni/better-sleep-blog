@@ -96,35 +96,35 @@
     class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
   >
     <div
-      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent"
+      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight"
     >
       Search
     </div>
   </div>
-  <label class="input input-bordered flex items-center gap-2 mt-10 mb-5 w-full">
+  <div class="flex items-center gap-2 mt-10 mb-5 w-full rounded-md border border-input px-3">
     <input
       id="search-input"
       type="text"
-      class="grow w-full"
+      class="flex h-9 w-full bg-transparent py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none"
       placeholder="Search"
       bind:value={searchQuery}
       onfocus={() => (focusItem = 0)}
       aria-label="Search input"
     />
-  </label>
+  </div>
 
   {#if loading && searchQuery.length > 0}
-    <div class="text-center mt-10 text-accent text-xl">Loading...</div>
+    <div class="text-center mt-10 text-highlight text-xl">Loading...</div>
   {/if}
 
   {#if error}
-    <div class="text-center mt-10 text-accent text-xl">
+    <div class="text-center mt-10 text-highlight text-xl">
       Error connecting to search. Please try again later.
     </div>
   {/if}
 
   {#if !loading && searchQuery.length > 0 && results.length === 0 && !error}
-    <div class="text-center mt-10 text-accent text-xl">No results found</div>
+    <div class="text-center mt-10 text-highlight text-xl">No results found</div>
     {#if dev}
       <div class="text-center mt-4 font-mono">
         Development mode only message: if you're missing content, rebuild your
@@ -138,12 +138,12 @@
       <a
         href={result.item.path || "/"}
         id="search-result-{i + 1}"
-        class="card my-6 bg-white shadow-xl flex-row overflow-hidden focus:mx-[-10px] focus:my-[-5px] focus:border-4 focus:border-secondary"
+        class="rounded-xl border bg-card shadow-xl my-6 flex-row overflow-hidden flex focus:mx-[-10px] focus:my-[-5px] focus:border-4 focus:border-secondary"
       >
         <div class="flex-none w-6 md:w-32 bg-secondary"></div>
         <div class="py-6 px-6">
           <div class="text-xl">{result.item.title}</div>
-          <div class="text-sm text-accent">
+          <div class="text-sm text-highlight">
             {result.item.path}
           </div>
           <div class="text-slate-500">{result.item.description}</div>

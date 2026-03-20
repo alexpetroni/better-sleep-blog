@@ -2,6 +2,7 @@
   import { applyAction, enhance } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
   import "../../../../app.css"
+  import { Button } from "$lib/components/ui/button/index.js"
 
   interface User {
     email: string
@@ -68,8 +69,8 @@
             type="text"
             placeholder="Your full name"
             class="{fieldError(form, 'fullName')
-              ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
+              ? 'border-destructive focus-visible:ring-destructive'
+              : ''} mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             value={form?.fullName ?? fullName}
             maxlength="50"
           />
@@ -85,8 +86,8 @@
             type="text"
             placeholder="Company name"
             class="{fieldError(form, 'companyName')
-              ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
+              ? 'border-destructive focus-visible:ring-destructive'
+              : ''} mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             value={form?.companyName ?? companyName}
             maxlength="50"
           />
@@ -102,8 +103,8 @@
             type="text"
             placeholder="Company website"
             class="{fieldError(form, 'website')
-              ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
+              ? 'border-destructive focus-visible:ring-destructive'
+              : ''} mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             value={form?.website ?? website}
             maxlength="50"
           />
@@ -115,12 +116,13 @@
           </p>
         {/if}
         <div class="mt-4">
-          <input
+          <Button
             type="submit"
-            class="btn btn-primary mt-3 btn-wide"
-            value={loading ? "..." : "Create Profile"}
+            class="mt-3 min-w-[200px]"
             disabled={loading}
-          />
+          >
+            {loading ? "..." : "Create Profile"}
+          </Button>
         </div>
       </form>
 

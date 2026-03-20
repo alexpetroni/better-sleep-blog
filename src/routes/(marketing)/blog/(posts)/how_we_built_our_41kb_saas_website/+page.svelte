@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { buttonVariants } from "$lib/components/ui/button/index.js"
+</script>
+
 <p class="lead">How to use this template you to bootstrap your own site.</p>
 
 <p>
@@ -17,8 +21,9 @@
 <a
   href="https://criticalmoments.io/blog/how_we_built_our_marketing_page"
   target="_blank"
+  class={buttonVariants({ variant: "default" })}
 >
-  <button class="btn btn-primary">Read the Blog Post</button>
+  Read the Blog Post
 </a>
 
 <p>
@@ -31,6 +36,6 @@
   If you are looking for examples of blog posts with rich content rendered
   inside this template, checkout the other demo posts <a
     href="/blog"
-    class="link">here</a
+    class="underline underline-offset-4">here</a
   >.
 </p>

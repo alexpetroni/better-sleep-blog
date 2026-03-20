@@ -4,6 +4,7 @@
   import { goto } from "$app/navigation"
   import { onMount } from "svelte"
   import { page } from "$app/state"
+  import { Alert, AlertDescription } from "$lib/components/ui/alert/index.js"
 
   let { data } = $props()
   let { supabase } = data
@@ -28,7 +29,7 @@
 </svelte:head>
 
 {#if page.url.searchParams.get("verified") == "true"}
-  <div role="alert" class="alert alert-success mb-5">
+  <Alert variant="success" class="mb-5">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="stroke-current shrink-0 h-6 w-6"
@@ -41,8 +42,8 @@
         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
       /></svg
     >
-    <span>Email verified! Please sign in.</span>
-  </div>
+    <AlertDescription>Email verified! Please sign in.</AlertDescription>
+  </Alert>
 {/if}
 <h1 class="text-2xl font-bold mb-6">Sign In</h1>
 <Auth

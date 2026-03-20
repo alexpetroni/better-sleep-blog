@@ -4,6 +4,7 @@
     WebsiteBaseUrl,
     WebsiteDescription,
   } from "./../../config"
+  import { buttonVariants } from "$lib/components/ui/button/index.js"
 
   const ldJson = {
     "@context": "https://schema.org",
@@ -149,7 +150,7 @@
     {
       name: "Delightful Stack",
       description:
-        "Tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase.",
+        "Tools you'll love working with, including SvelteKit, Tailwind, shadcn-svelte, Postgres, and Supabase.",
       linkText: "Docs",
       newPage: true,
       link: "https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#tech-stack",
@@ -229,11 +230,11 @@
   {@html jsonldScript}
 </svelte:head>
 
-<div class="hero min-h-[60vh]">
-  <div class="hero-content text-center py-12">
+<div class="flex min-h-[60vh] items-center justify-center">
+  <div class="text-center py-12">
     <div class="max-w-xl">
       <div
-        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
+        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight mb-3 md:mb-7 pb-1"
       >
         SaaS Starter Demo
       </div>
@@ -260,34 +261,34 @@
       <div class="mt-6 md:mt-10 text-sm md:text-lg">
         Built with <a
           href="https://kit.svelte.dev"
-          class="link font-bold"
+          class="underline underline-offset-4 font-bold"
           target="_blank">SvelteKit</a
         >,
-        <a href="https://supabase.com" class="link font-bold" target="_blank"
+        <a href="https://supabase.com" class="underline underline-offset-4 font-bold" target="_blank"
           >Supabase</a
         >,
-        <a href="https://stripe.com" class="link font-bold" target="_blank"
+        <a href="https://stripe.com" class="underline underline-offset-4 font-bold" target="_blank"
           >Stripe</a
         >,
-        <a href="https://tailwindcss.com" class="link font-bold" target="_blank"
+        <a href="https://tailwindcss.com" class="underline underline-offset-4 font-bold" target="_blank"
           >Tailwind</a
         >,
-        <a href="https://daisyui.com" class="link font-bold" target="_blank"
-          >DaisyUI</a
+        <a href="https://shadcn-svelte.com" class="underline underline-offset-4 font-bold" target="_blank"
+          >shadcn-svelte</a
         >, and
         <a
           href="https://www.postgresql.org"
-          class="link font-bold"
+          class="underline underline-offset-4 font-bold"
           target="_blank">Postgres</a
         >
       </div>
       <div
         class="mt-6 md:mt-4 flex flex-row flex-wrap gap-4 place-content-center"
       >
-        <a href="https://github.com/CriticalMoments/CMSaasStarter" class="btn btn-primary px-6">★ us on Github</a>
+        <a href="https://github.com/CriticalMoments/CMSaasStarter" class="{buttonVariants({ variant: 'default' })} px-6">★ us on Github</a>
         <a
           href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
-          class="btn btn-outline btn-primary px-6"
+          class="{buttonVariants({ variant: 'outline' })} px-6"
         >
           Read the Docs
         </a>
@@ -299,7 +300,7 @@
   <div class="pt-20 pb-8 px-7">
     <div class="max-w-lg mx-auto text-center">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight pb-2"
       >
         Explore the Features
       </div>
@@ -317,8 +318,8 @@
       class="flex gap-6 mt-12 max-w-[1064px] mx-auto place-content-center flex-wrap"
     >
       {#each features as feature}
-        <div class="card bg-white w-[270px] min-h-[300px] flex-none shadow-xl">
-          <div class="card-body items-center text-center p-[24px] pt-[32px]">
+        <div class="rounded-xl border bg-card w-[270px] min-h-[300px] flex-none shadow-xl">
+          <div class="flex flex-col items-center text-center p-[24px] pt-[32px]">
             <div>
               <svg
                 width="50px"
@@ -332,7 +333,7 @@
                 {@html feature.svgContent}
               </svg>
             </div>
-            <h2 class="card-title">
+            <h2 class="font-semibold text-lg">
               {feature.name}
             </h2>
             <p class="text-sm">
@@ -341,13 +342,10 @@
             {#if feature.link}
               <a
                 href={feature.link}
-                class="pb-4"
+                class="{buttonVariants({ variant: 'outline', size: 'sm' })} rounded-full min-w-[100px] mt-2 mb-4"
                 target={feature.newPage ? "_blank" : ""}
               >
-                <button
-                  class="btn btn-xs btn-outline rounded-full btn-primary min-w-[100px]"
-                  >{feature.linkText ? feature.linkText : "Try It"}</button
-                >
+                {feature.linkText ? feature.linkText : "Try It"}
               </a>
             {/if}
           </div>
@@ -356,11 +354,11 @@
     </div>
   </div>
 </div>
-<div class="hero min-h-[60vh] mt-12">
-  <div class="hero-content text-center pb-16 pt-4 px-4">
+<div class="flex min-h-[60vh] items-center justify-center mt-12">
+  <div class="text-center pb-16 pt-4 px-4">
     <div class="max-w-lg">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mt-4 pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight mt-4 pb-2"
       >
         See it in Action
       </div>
@@ -368,11 +366,18 @@
         class="flex flex-col lg:flex-row mt-6 gap-6 place-content-center content-center"
       >
         <div class="hidden md:block">
-          <a href="https://criticalmoments.io" target="_blank" class="link">
-            <div class="mockup-browser border">
-              <div class="mockup-browser-toolbar">
-                <div class="input" style="background:#eee;">
-                  https://criticalmoments.io
+          <a href="https://criticalmoments.io" target="_blank" class="underline underline-offset-4">
+            <div class="rounded-xl border overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2 border-b bg-muted">
+                <div class="flex gap-1.5">
+                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div class="flex-1 text-center">
+                  <div class="inline-block rounded-md px-3 py-1 text-sm" style="background:#eee;">
+                    https://criticalmoments.io
+                  </div>
                 </div>
               </div>
               <div class="flex justify-center">
@@ -386,8 +391,8 @@
           </a>
         </div>
         <div class="md:hidden">
-          <a href="https://criticalmoments.io" target="_blank" class="link">
-            <div class="card shadow-xl border overflow-hidden">
+          <a href="https://criticalmoments.io" target="_blank" class="underline underline-offset-4">
+            <div class="rounded-xl shadow-xl border overflow-hidden">
               <img
                 alt="Screenshot of criticalmoments.io homepage"
                 class="aspect-2044/1242"
@@ -411,12 +416,12 @@
             <div class="px-4 mt-6 text-lg md:text-xl">
               Our <a
                 href="https://criticalmoments.io"
-                class="link font-bold"
+                class="underline underline-offset-4 font-bold"
                 target="_blank">webpage</a
               > is the best example of SaaS Starter with style and real content.
             </div>
             <div class="mt-4 text-large">
-              <a href="https://criticalmoments.io" target="_blank" class="btn btn-primary btn-wide mt-3"
+              <a href="https://criticalmoments.io" target="_blank" class="{buttonVariants({ variant: 'default' })} min-w-[200px] mt-3"
                 >See it in Action</a
               >
             </div>

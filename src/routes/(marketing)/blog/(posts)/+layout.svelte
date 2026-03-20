@@ -54,7 +54,7 @@
   <!-- <meta property="og:image" content="https://samplesite.com/image.jpg"> -->
 
   <!-- Twitter -->
-  <!-- “summary”, “summary_large_image”, “app”, or “player” -->
+  <!-- "summary", "summary_large_image", "app", or "player" -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={currentPost.title} />
   <meta name="twitter:description" content={currentPost.description} />
@@ -66,7 +66,7 @@
 </svelte:head>
 
 <article class="prose mx-auto py-12 px-6 font-sans">
-  <div class="text-sm text-accent">
+  <div class="text-sm text-highlight">
     {currentPost.parsedDate?.toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",

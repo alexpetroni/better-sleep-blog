@@ -63,46 +63,46 @@
     <PricingModule callToAction="Get Started" highlightedPlanId="pro" />
     <h1 class="text-2xl font-bold text-center mt-24">Pricing FAQ</h1>
     <div class="flex place-content-center">
-      <div class="join join-vertical max-w-xl py-6 mx-auto">
-        <div class="collapse collapse-arrow join-item border border-primary">
-          <input type="radio" name="faq-accordion" />
-          <div class="collapse-title text-lg font-medium">
+      <div class="flex flex-col gap-2 max-w-xl py-6 mx-auto">
+        <details class="group border border-primary rounded-lg">
+          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
             Is this template free to use?
-          </div>
-          <div class="collapse-content">
+            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-4 pb-4">
             <p>Yup! This template is free to use for any project.</p>
           </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border border-primary">
-          <input type="radio" name="faq-accordion" />
-          <div class="collapse-title text-lg font-medium">
+        </details>
+        <details class="group border border-primary rounded-lg">
+          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
             Why does a free template have a pricing page?
-          </div>
-          <div class="collapse-content">
+            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-4 pb-4">
             <p>
               The pricing page is part of the boilerplate. It shows how the
               pricing page integrates into the billing portal and the Stripe
               Checkout flows.
             </p>
           </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border border-primary">
-          <input type="radio" name="faq-accordion" />
-          <div class="collapse-title text-lg font-medium">
+        </details>
+        <details class="group border border-primary rounded-lg">
+          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
             What license is the template under?
-          </div>
-          <div class="collapse-content">
+            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-4 pb-4">
             <p>The template is under the MIT license.</p>
           </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border border-primary">
-          <input type="radio" name="faq-accordion" />
-          <div class="collapse-title text-lg font-medium">
+        </details>
+        <details class="group border border-primary rounded-lg">
+          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
             Can I try out purchase flows without real a credit card?
-          </div>
-          <div class="collapse-content">
+            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-4 pb-4">
             <p>
-              Our demo page <a href="https://saasstarter.work" class="link"
+              Our demo page <a href="https://saasstarter.work" class="underline underline-offset-4"
                 >SaasStarter.work</a
               > has a functional demo page, using Stripe's test environment.
             </p>
@@ -111,7 +111,7 @@
               future expiry date to test the payment and upgrade flows.
             </p>
           </div>
-        </div>
+        </details>
       </div>
     </div>
 
@@ -148,26 +148,26 @@
     </h2>
 
     <div class="overflow-visible mx-auto max-w-xl mt-4">
-      <table class="table">
+      <table class="w-full caption-bottom text-sm">
         <thead
-          class="text-lg sticky top-0 bg-base-100 bg-opacity-50 z-10 backdrop-blur-sm"
+          class="text-lg sticky top-0 bg-background bg-opacity-50 z-10 backdrop-blur-sm"
         >
           <tr>
-            <th></th>
-            <th class="text-center">Free</th>
-            <th class="text-center">Pro</th>
+            <th class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"></th>
+            <th class="h-10 px-2 text-center align-middle font-medium text-muted-foreground">Free</th>
+            <th class="h-10 px-2 text-center align-middle font-medium text-muted-foreground">Pro</th>
           </tr>
         </thead>
         <tbody>
           {#each planFeatures as feature}
             {#if feature.header}
-              <tr class="bg-base-200 font-bold">
-                <td colspan="3">{feature.name} </td>
+              <tr class="bg-muted font-bold">
+                <td class="p-2" colspan="3">{feature.name} </td>
               </tr>
             {:else}
-              <tr class="relative">
-                <td>{feature.name} </td>
-                <td class="text-center">
+              <tr class="relative border-b transition-colors hover:bg-muted/50">
+                <td class="p-2">{feature.name} </td>
+                <td class="p-2 text-center">
                   {#if feature.freeString}
                     {feature.freeString}
                   {:else if feature.freeIncluded}
@@ -180,13 +180,13 @@
                   {:else}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="w-[26px] h-[26px] inline text-base-200"
+                      class="w-[26px] h-[26px] inline text-muted"
                     >
                       <use href="#nocircle" />
                     </svg>
                   {/if}
                 </td>
-                <td class="text-center">
+                <td class="p-2 text-center">
                   {#if feature.proString}
                     {feature.proString}
                   {:else if feature.proIncluded}
@@ -199,7 +199,7 @@
                   {:else}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="w-[26px] h-[26px] inline text-base-200"
+                      class="w-[26px] h-[26px] inline text-muted"
                     >
                       <use href="#nocircle" />
                     </svg>

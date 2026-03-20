@@ -12,7 +12,7 @@
     class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
   >
     <div
-      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent"
+      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight"
     >
       {blogInfo.name}
     </div>
@@ -28,11 +28,11 @@
 
   {#each sortedBlogPosts as post}
     <a href={post.link}>
-      <div class="card my-6 bg-white shadow-xl flex-row overflow-hidden">
+      <div class="rounded-xl border bg-card shadow-xl my-6 flex-row overflow-hidden flex">
         <div class="flex-none w-6 md:w-32 bg-secondary"></div>
         <div class="py-6 px-6">
           <div class="text-xl">{post.title}</div>
-          <div class="text-sm text-accent">
+          <div class="text-sm text-highlight">
             {post.parsedDate?.toLocaleDateString("en-US", {
               month: "short",
               day: "numeric",

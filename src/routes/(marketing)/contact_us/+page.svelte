@@ -2,6 +2,7 @@
   import { enhance, applyAction } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
   import type { FullAutoFill } from "svelte/elements"
+  import { Button } from "$lib/components/ui/button/index.js"
 
   let errors: { [fieldName: string]: string } = $state({})
   let loading = $state(false)
@@ -100,14 +101,14 @@
     {#if showSuccess}
       <div class="flex flex-col place-content-center lg:min-h-[70vh]">
         <div
-          class="card card-bordered shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
+          class="rounded-xl border bg-card shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
         >
           <div class="text-2xl font-bold mb-4">Thank you!</div>
           <p class="">We've received your message and will be in touch soon.</p>
         </div>
       </div>
     {:else}
-      <div class="card card-bordered shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6">
+      <div class="rounded-xl border bg-card shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6">
         <form
           class="form-widget flex flex-col"
           method="POST"
@@ -131,8 +132,8 @@
                   autocomplete={field.autocomplete}
                   rows={4}
                   class="{errors[field.id]
-                    ? 'input-error'
-                    : ''} h-24 input-sm mt-1 input input-bordered w-full mb-3 text-base py-4"
+                    ? 'border-destructive focus-visible:ring-destructive'
+                    : ''} h-24 h-8 text-sm mt-1 flex w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring mb-3 py-4"
                 ></textarea>
               {:else}
                 <input
@@ -141,8 +142,8 @@
                   type={field.inputType}
                   autocomplete={field.autocomplete}
                   class="{errors[field.id]
-                    ? 'input-error'
-                    : ''} input-sm mt-1 input input-bordered w-full mb-3 text-base py-4"
+                    ? 'border-destructive focus-visible:ring-destructive'
+                    : ''} h-8 text-sm mt-1 flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring mb-3 py-4"
                 />
               {/if}
             </label>
@@ -154,8 +155,8 @@
             </p>
           {/if}
 
-          <button class="btn btn-primary {loading ? 'btn-disabled' : ''}"
-            >{loading ? "Submitting" : "Submit"}</button
+          <Button disabled={loading}
+            >{loading ? "Submitting" : "Submit"}</Button
           >
         </form>
       </div>

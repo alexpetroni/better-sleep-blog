@@ -2,6 +2,8 @@
   import { page } from "$app/state"
   import { getContext } from "svelte"
   import SettingsModule from "../settings_module.svelte"
+  import { Button } from "$lib/components/ui/button/index.js"
+  import { Alert, AlertDescription } from "$lib/components/ui/alert/index.js"
 
   const adminSection: { value: string } = getContext("adminSection")
   adminSection.value = "settings"
@@ -79,7 +81,7 @@
   />
 {:else}
   <div
-    class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow-sm max-w-md"
+    class="rounded-xl border bg-card shadow-sm p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row max-w-md"
   >
     <div class="flex flex-col gap-y-4">
       {#if usingOAuth}
@@ -95,17 +97,22 @@
         The button below will send you an email at {user?.email} which will allow
         you to set your password.
       </div>
-      <button
-        class="btn btn-outline btn-wide {sentEmail ? 'hidden' : ''}"
+      <Button
+        variant="outline"
+        class="min-w-[200px] {sentEmail ? 'hidden' : ''}"
         disabled={sendBtnDisabled}
         onclick={sendForgotPassword}
       >
         {sendBtnText}
-      </button>
-      <div class="success alert alert-success {sentEmail ? '' : 'hidden'}">
-        Sent email! Please check your inbox and use the link to set your
-        password.
-      </div>
+      </Button>
+      {#if sentEmail}
+        <Alert variant="success">
+          <AlertDescription>
+            Sent email! Please check your inbox and use the link to set your
+            password.
+          </AlertDescription>
+        </Alert>
+      {/if}
     </div>
   </div>
 {/if}

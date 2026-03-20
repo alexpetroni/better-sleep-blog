@@ -1,5 +1,6 @@
 <script lang="ts">
   import { pricingPlans } from "./pricing_plans"
+  import { buttonVariants } from "$lib/components/ui/button/index.js"
 
   interface Props {
     // Module context
@@ -24,9 +25,9 @@
 >
   {#each pricingPlans as plan}
     <div
-      class="flex-none card card-bordered {plan.id === highlightedPlanId
+      class="flex-none rounded-xl border bg-card shadow-xl {plan.id === highlightedPlanId
         ? 'border-primary'
-        : 'border-gray-200'} shadow-xl flex-1 grow min-w-[260px] max-w-[310px] p-6"
+        : 'border-gray-200'} flex-1 grow min-w-[260px] max-w-[310px] p-6"
     >
       <div class="flex flex-col h-full">
         <div class="text-xl font-bold">{plan.name}</div>
@@ -48,7 +49,7 @@
           <div class="mt-6 pt-4 flex-1 flex flex-row items-center">
             {#if plan.id === currentPlanId}
               <div
-                class="btn btn-outline btn-success no-animation w-[80%] mx-auto cursor-default"
+                class="inline-flex items-center justify-center rounded-md border border-success bg-success/10 text-success h-9 px-4 py-2 text-sm font-medium w-[80%] mx-auto cursor-default"
               >
                 Current Plan
               </div>
@@ -56,7 +57,7 @@
               <a
                 href={"/account/subscribe/" +
                   (plan?.stripe_price_id ?? "free_plan")}
-                class="btn btn-primary w-[80%] mx-auto"
+                class="{buttonVariants({ variant: 'default' })} w-[80%] mx-auto"
               >
                 {callToAction}
               </a>

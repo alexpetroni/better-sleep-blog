@@ -23,7 +23,7 @@
 
 - [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, search, emails, and more.
 - [Lightning Performance](#performance--best-practices): fast pre-rendered pages which score 100/100 on Google PageSpeed.
-- [Delighful Developer Experience](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase.
+- [Delightful Developer Experience](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, shadcn-svelte, Postgres, and Supabase.
 - Extensible: all the tools you need to make additional marketing pages, UI components, user dashboards, admin portals, database backends, API endpoints, and more.
 - [Hosting](#suggested-hosting-stack): Our suggested hosting stack is free to host, cheap to scale, easy to manage, and includes automatic deployments.
 - [MIT Open Source](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
@@ -83,8 +83,8 @@ Want to learn why we picked the technologies we did, and how to keep your fork l
 
 - Web Framework: SvelteKit
 - CSS / Styling
-  - Framework: TailwindCSS
-  - Component library: DaisyUI
+  - Framework: TailwindCSS v4
+  - Component library: shadcn-svelte (with bits-ui)
 - Suggested Hosting Stack
   - Host + CDN: Cloudflare Pages
   - Serverless compute: Cloudflare Workers
@@ -305,11 +305,12 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Update title and meta description tags for every public page. We include generic ones using your site name (`src/config.ts`), but the more specific these are the better.
   - This done automatically for blog posts from `posts.ts` metadata
 - Style
-  - Theme: Update the theme to match your brand, or use one of the built in themes from DaisyUI (see `app.css`). DaisyUI can automatically use a dark mode theme on systems with dark mode enabled (disabled by default) -- to enable if remove `themes: false;` and specify a dark mode theme. Docs: https://daisyui.com/docs/themes/
-  - Update the marketing page layout `src/routes/(marketing)/+layout.svelte`: customize design, delete unwanted pages from header and footer
+  - Theme: Update the theme colors in `src/app.css` by modifying the CSS variables (e.g. `--primary`, `--secondary`, `--accent`, etc.) to match your brand. The theme uses HSL color values. See [shadcn-svelte theming docs](https://www.shadcn-svelte.com/docs/theming) for details.
+  - UI Components: shadcn-svelte components live in `src/lib/components/ui/`. You can customize them directly or add new ones. See [shadcn-svelte docs](https://www.shadcn-svelte.com/docs) for available components.
+  - Update the marketing page layout `src/routes/(marketing)/+layout.svelte`: customize design, delete unwanted pages from header and footer.
   - Style: make it your own look and feel.
-  - Update the favicon in the `/static/` directory
-  - The Authentication UI should automatically update based on your DaisyUI style, but check out the login in pages, and further design tweaks can be made in `src/routes/(marketing)/login/login_config.ts` (see [Auth UI](https://supabase.com/docs/guides/auth/auth-helpers/auth-ui#customization) for options).
+  - Update the favicon in the `/static/` directory.
+  - The Authentication UI colors can be customized in `src/routes/(marketing)/login/login_config.ts` (see [Auth UI](https://supabase.com/docs/guides/auth/auth-helpers/auth-ui#customization) for options).
 - Site Search: any [prerendered](https://kit.svelte.dev/docs/page-options#prerender) content will automatically be indexed by the site search. To exclude a page, add it to `excludePaths` in `src/lib/build_index.ts`.
 - Functionality
   - Add actual SaaS functionality!
@@ -324,7 +325,6 @@ The open source community is extending and improving SaasStarter!
 These extensions are reference implementations of commonly needed features. We don't integrate them into the main branch to keep our dependencies minimal and simplify maintenance. However, if you need them you can cherry pick into your fork/repo:
 
 - Internationalization: [branch](https://github.com/CriticalMoments/CMSaasStarter/tree/extension/internationalization), and [instructions](https://github.com/CriticalMoments/CMSaasStarter/pull/49)
-- Fork using Shadcn/ui instead of DaisyUI: [kizivat/saas-kit](https://github.com/kizivat/saas-kit)
 
 ### Icons Credits
 

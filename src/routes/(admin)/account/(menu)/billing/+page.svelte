@@ -26,7 +26,7 @@
   {data.isActiveCustomer ? "Billing" : "Select a Plan"}
 </h1>
 <div>
-  View our <a href="/pricing" target="_blank" class="link">pricing page</a> for details.
+  View our <a href="/pricing" target="_blank" class="underline underline-offset-4">pricing page</a> for details.
 </div>
 
 {#if !data.isActiveCustomer}
@@ -36,7 +36,7 @@
 
   {#if data.hasEverHadSubscription}
     <div class="mt-10">
-      <a href="/account/billing/manage" class="link">View past invoices</a>
+      <a href="/account/billing/manage" class="underline underline-offset-4">View past invoices</a>
     </div>
   {/if}
 {:else}
