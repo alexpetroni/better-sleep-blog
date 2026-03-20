@@ -25,6 +25,12 @@ module.exports = {
           typescript: "@typescript-eslint/parser",
         },
       },
+      rules: {
+        // Svelte 5 warns about destructuring `data` from $props() since it
+        // captures only the initial value. This is intentional in SvelteKit
+        // page components where `data` doesn't change after load.
+        "svelte/valid-compile": ["error", { ignoreWarnings: true }],
+      },
     },
     {
       // Apply to all test files. Proper type checking in tests with mocks can be tedious and counterproductive.
