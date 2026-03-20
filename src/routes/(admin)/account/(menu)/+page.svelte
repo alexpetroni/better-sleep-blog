@@ -1,6 +1,10 @@
 <script lang="ts">
   import { getContext } from "svelte"
-  import { Alert, AlertDescription, AlertTitle } from "$lib/components/ui/alert/index.js"
+  import {
+    Alert,
+    AlertDescription,
+    AlertTitle,
+  } from "$lib/components/ui/alert/index.js"
 
   const adminSection: { value: string } = getContext("adminSection")
   adminSection.value = "home"
@@ -32,9 +36,13 @@
       and functionality.
     </div>
     <div class="my-2">
-      The <a href="/account/billing" class="underline underline-offset-4">billing</a> and
-      <a href="/account/settings" class="underline underline-offset-4">settings</a> pages are functional
-      demos.
+      The <a href="/account/billing" class="underline underline-offset-4"
+        >billing</a
+      >
+      and
+      <a href="/account/settings" class="underline underline-offset-4"
+        >settings</a
+      > pages are functional demos.
     </div>
   </AlertDescription>
 </Alert>

@@ -108,7 +108,9 @@
         </div>
       </div>
     {:else}
-      <div class="rounded-xl border bg-card shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6">
+      <div
+        class="rounded-xl border bg-card shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6"
+      >
         <form
           class="form-widget flex flex-col"
           method="POST"
@@ -155,8 +157,7 @@
             </p>
           {/if}
 
-          <Button disabled={loading}
-            >{loading ? "Submitting" : "Submit"}</Button
+          <Button disabled={loading}>{loading ? "Submitting" : "Submit"}</Button
           >
         </form>
       </div>

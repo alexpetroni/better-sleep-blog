@@ -6,15 +6,13 @@
     class: className,
     children,
     ...restProps
-  }: HTMLAttributes<HTMLDivElement> & { children?: import("svelte").Snippet } =
-    $props()
+  }: HTMLAttributes<HTMLDivElement> & {
+    children?: import("svelte").Snippet
+  } = $props()
 </script>
 
 <div
-  class={cn(
-    "rounded-xl border bg-card text-card-foreground shadow",
-    className,
-  )}
+  class={cn("rounded-xl border bg-card text-card-foreground shadow", className)}
   {...restProps}
 >
   {#if children}

@@ -169,7 +169,11 @@ export const sendTemplatedEmail = async ({
     let resp
     if (htmlBody) {
       resp = plaintextBody
-        ? await resend.emails.send({ ...baseOptions, html: htmlBody, text: plaintextBody })
+        ? await resend.emails.send({
+            ...baseOptions,
+            html: htmlBody,
+            text: plaintextBody,
+          })
         : await resend.emails.send({ ...baseOptions, html: htmlBody })
     } else {
       resp = await resend.emails.send({ ...baseOptions, text: plaintextBody! })

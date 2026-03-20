@@ -10,7 +10,11 @@
       <h1 class="text-5xl font-bold">This is embarrassing...</h1>
       <p class="py-6 text-2xl">There was an error: {page?.error?.message}</p>
       <div>
-        <a href="/" class="{buttonVariants({ variant: 'default' })} min-w-[200px]">Return Home</a>
+        <a
+          href="/"
+          class="{buttonVariants({ variant: 'default' })} min-w-[200px]"
+          >Return Home</a
+        >
       </div>
     </div>
   </div>

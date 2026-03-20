@@ -25,7 +25,8 @@
 >
   {#each pricingPlans as plan}
     <div
-      class="flex-none rounded-xl border bg-card shadow-xl {plan.id === highlightedPlanId
+      class="flex-none rounded-xl border bg-card shadow-xl {plan.id ===
+      highlightedPlanId
         ? 'border-primary'
         : 'border-gray-200'} flex-1 grow min-w-[260px] max-w-[310px] p-6"
     >

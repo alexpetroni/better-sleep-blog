@@ -65,18 +65,44 @@
     <div class="flex place-content-center">
       <div class="flex flex-col gap-2 max-w-xl py-6 mx-auto">
         <details class="group border border-primary rounded-lg">
-          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
+          <summary
+            class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium"
+          >
             Is this template free to use?
-            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg
+              class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg
+            >
           </summary>
           <div class="px-4 pb-4">
             <p>Yup! This template is free to use for any project.</p>
           </div>
         </details>
         <details class="group border border-primary rounded-lg">
-          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
+          <summary
+            class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium"
+          >
             Why does a free template have a pricing page?
-            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg
+              class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg
+            >
           </summary>
           <div class="px-4 pb-4">
             <p>
@@ -87,23 +113,50 @@
           </div>
         </details>
         <details class="group border border-primary rounded-lg">
-          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
+          <summary
+            class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium"
+          >
             What license is the template under?
-            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg
+              class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg
+            >
           </summary>
           <div class="px-4 pb-4">
             <p>The template is under the MIT license.</p>
           </div>
         </details>
         <details class="group border border-primary rounded-lg">
-          <summary class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium">
+          <summary
+            class="flex cursor-pointer items-center justify-between p-4 text-lg font-medium"
+          >
             Can I try out purchase flows without real a credit card?
-            <svg class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg
+              class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg
+            >
           </summary>
           <div class="px-4 pb-4">
             <p>
-              Our demo page <a href="https://saasstarter.work" class="underline underline-offset-4"
-                >SaasStarter.work</a
+              Our demo page <a
+                href="https://saasstarter.work"
+                class="underline underline-offset-4">SaasStarter.work</a
               > has a functional demo page, using Stripe's test environment.
             </p>
             <p class="mt-4">
@@ -153,9 +206,17 @@
           class="text-lg sticky top-0 bg-background bg-opacity-50 z-10 backdrop-blur-sm"
         >
           <tr>
-            <th class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"></th>
-            <th class="h-10 px-2 text-center align-middle font-medium text-muted-foreground">Free</th>
-            <th class="h-10 px-2 text-center align-middle font-medium text-muted-foreground">Pro</th>
+            <th
+              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            ></th>
+            <th
+              class="h-10 px-2 text-center align-middle font-medium text-muted-foreground"
+              >Free</th
+            >
+            <th
+              class="h-10 px-2 text-center align-middle font-medium text-muted-foreground"
+              >Pro</th
+            >
           </tr>
         </thead>
         <tbody>

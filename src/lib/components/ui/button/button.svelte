@@ -48,8 +48,10 @@
     size = "default",
     children,
     ...restProps
-  }: ButtonProps & { children?: import("svelte").Snippet; class?: string } =
-    $props()
+  }: ButtonProps & {
+    children?: import("svelte").Snippet
+    class?: string
+  } = $props()
 </script>
 
 <button class={cn(buttonVariants({ variant, size }), className)} {...restProps}>

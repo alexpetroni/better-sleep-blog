@@ -21,7 +21,11 @@
 <!-- Mobile header (lg:hidden) -->
 <div class="flex items-center h-16 px-4 border-b bg-background lg:hidden">
   <a href="/" class="flex-1 text-xl font-semibold">{WebsiteName}</a>
-  <button aria-label="Toggle menu" onclick={() => sidebarOpen = !sidebarOpen} class="inline-flex items-center justify-center rounded-full h-10 w-10 hover:bg-accent">
+  <button
+    aria-label="Toggle menu"
+    onclick={() => (sidebarOpen = !sidebarOpen)}
+    class="inline-flex items-center justify-center rounded-full h-10 w-10 hover:bg-accent"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-5 w-5"
@@ -43,21 +47,31 @@
   {#if sidebarOpen}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <div class="fixed inset-0 z-40 bg-black/50 lg:hidden" onclick={() => sidebarOpen = false}></div>
+    <div
+      class="fixed inset-0 z-40 bg-black/50 lg:hidden"
+      onclick={() => (sidebarOpen = false)}
+    ></div>
   {/if}
 
   <!-- Sidebar -->
-  <aside class="fixed inset-y-0 left-0 z-50 w-80 border-r bg-background transform transition-transform lg:relative lg:translate-x-0 {sidebarOpen ? 'translate-x-0' : '-translate-x-full'}">
+  <aside
+    class="fixed inset-y-0 left-0 z-50 w-80 border-r bg-background transform transition-transform lg:relative lg:translate-x-0 {sidebarOpen
+      ? 'translate-x-0'
+      : '-translate-x-full'}"
+  >
     <nav class="flex flex-col gap-1 p-4 w-80 min-h-full text-primary">
-      <div
-        class="font-bold text-xl px-2 py-1 text-primary flex flex-row"
-      >
+      <div class="font-bold text-xl px-2 py-1 text-primary flex flex-row">
         <a href="/" class="grow">{WebsiteName}</a>
-        <button onclick={() => sidebarOpen = false} class="lg:hidden ml-3"> &#x2715; </button>
+        <button onclick={() => (sidebarOpen = false)} class="lg:hidden ml-3">
+          &#x2715;
+        </button>
       </div>
       <a
         href="/account"
-        class="flex items-center gap-3 px-3 py-2 text-base {adminSection.value === 'home' ? 'bg-accent text-accent-foreground rounded-md' : 'hover:bg-accent/50 rounded-md'}"
+        class="flex items-center gap-3 px-3 py-2 text-base {adminSection.value ===
+        'home'
+          ? 'bg-accent text-accent-foreground rounded-md'
+          : 'hover:bg-accent/50 rounded-md'}"
         onclick={closeDrawer}
       >
         <svg
@@ -77,7 +91,10 @@
       </a>
       <a
         href="/account/billing"
-        class="flex items-center gap-3 px-3 py-2 text-base {adminSection.value === 'billing' ? 'bg-accent text-accent-foreground rounded-md' : 'hover:bg-accent/50 rounded-md'}"
+        class="flex items-center gap-3 px-3 py-2 text-base {adminSection.value ===
+        'billing'
+          ? 'bg-accent text-accent-foreground rounded-md'
+          : 'hover:bg-accent/50 rounded-md'}"
         onclick={closeDrawer}
       >
         <svg
@@ -94,7 +111,10 @@
       </a>
       <a
         href="/account/settings"
-        class="flex items-center gap-3 px-3 py-2 text-base {adminSection.value === 'settings' ? 'bg-accent text-accent-foreground rounded-md' : 'hover:bg-accent/50 rounded-md'}"
+        class="flex items-center gap-3 px-3 py-2 text-base {adminSection.value ===
+        'settings'
+          ? 'bg-accent text-accent-foreground rounded-md'
+          : 'hover:bg-accent/50 rounded-md'}"
         onclick={closeDrawer}
       >
         <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="none" fill="none">
@@ -120,7 +140,11 @@
         Settings
       </a>
 
-      <a href="/account/sign_out" class="flex items-center gap-3 px-3 py-2 text-base mt-auto hover:bg-accent/50 rounded-md" onclick={closeDrawer}>Sign Out</a>
+      <a
+        href="/account/sign_out"
+        class="flex items-center gap-3 px-3 py-2 text-base mt-auto hover:bg-accent/50 rounded-md"
+        onclick={closeDrawer}>Sign Out</a
+      >
     </nav>
   </aside>
 

@@ -116,11 +116,7 @@
           </p>
         {/if}
         <div class="mt-4">
-          <Button
-            type="submit"
-            class="mt-3 min-w-[200px]"
-            disabled={loading}
-          >
+          <Button type="submit" class="mt-3 min-w-[200px]" disabled={loading}>
             {loading ? "..." : "Create Profile"}
           </Button>
         </div>

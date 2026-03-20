@@ -6,8 +6,9 @@
     class: className,
     children,
     ...restProps
-  }: HTMLAttributes<HTMLDivElement> & { children?: import("svelte").Snippet } =
-    $props()
+  }: HTMLAttributes<HTMLDivElement> & {
+    children?: import("svelte").Snippet
+  } = $props()
 </script>
 
 <div class={cn("text-sm [&_p]:leading-relaxed", className)} {...restProps}>

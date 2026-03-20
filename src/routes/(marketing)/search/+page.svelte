@@ -101,7 +101,9 @@
       Search
     </div>
   </div>
-  <div class="flex items-center gap-2 mt-10 mb-5 w-full rounded-md border border-input px-3">
+  <div
+    class="flex items-center gap-2 mt-10 mb-5 w-full rounded-md border border-input px-3"
+  >
     <input
       id="search-input"
       type="text"

@@ -264,17 +264,25 @@
           class="underline underline-offset-4 font-bold"
           target="_blank">SvelteKit</a
         >,
-        <a href="https://supabase.com" class="underline underline-offset-4 font-bold" target="_blank"
-          >Supabase</a
+        <a
+          href="https://supabase.com"
+          class="underline underline-offset-4 font-bold"
+          target="_blank">Supabase</a
         >,
-        <a href="https://stripe.com" class="underline underline-offset-4 font-bold" target="_blank"
-          >Stripe</a
+        <a
+          href="https://stripe.com"
+          class="underline underline-offset-4 font-bold"
+          target="_blank">Stripe</a
         >,
-        <a href="https://tailwindcss.com" class="underline underline-offset-4 font-bold" target="_blank"
-          >Tailwind</a
+        <a
+          href="https://tailwindcss.com"
+          class="underline underline-offset-4 font-bold"
+          target="_blank">Tailwind</a
         >,
-        <a href="https://shadcn-svelte.com" class="underline underline-offset-4 font-bold" target="_blank"
-          >shadcn-svelte</a
+        <a
+          href="https://shadcn-svelte.com"
+          class="underline underline-offset-4 font-bold"
+          target="_blank">shadcn-svelte</a
         >, and
         <a
           href="https://www.postgresql.org"
@@ -285,7 +293,11 @@
       <div
         class="mt-6 md:mt-4 flex flex-row flex-wrap gap-4 place-content-center"
       >
-        <a href="https://github.com/CriticalMoments/CMSaasStarter" class="{buttonVariants({ variant: 'default' })} px-6">★ us on Github</a>
+        <a
+          href="https://github.com/CriticalMoments/CMSaasStarter"
+          class="{buttonVariants({ variant: 'default' })} px-6"
+          >★ us on Github</a
+        >
         <a
           href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
           class="{buttonVariants({ variant: 'outline' })} px-6"
@@ -318,8 +330,12 @@
       class="flex gap-6 mt-12 max-w-[1064px] mx-auto place-content-center flex-wrap"
     >
       {#each features as feature}
-        <div class="rounded-xl border bg-card w-[270px] min-h-[300px] flex-none shadow-xl">
-          <div class="flex flex-col items-center text-center p-[24px] pt-[32px]">
+        <div
+          class="rounded-xl border bg-card w-[270px] min-h-[300px] flex-none shadow-xl"
+        >
+          <div
+            class="flex flex-col items-center text-center p-[24px] pt-[32px]"
+          >
             <div>
               <svg
                 width="50px"
@@ -342,7 +358,10 @@
             {#if feature.link}
               <a
                 href={feature.link}
-                class="{buttonVariants({ variant: 'outline', size: 'sm' })} rounded-full min-w-[100px] mt-2 mb-4"
+                class="{buttonVariants({
+                  variant: 'outline',
+                  size: 'sm',
+                })} rounded-full min-w-[100px] mt-2 mb-4"
                 target={feature.newPage ? "_blank" : ""}
               >
                 {feature.linkText ? feature.linkText : "Try It"}
@@ -366,7 +385,11 @@
         class="flex flex-col lg:flex-row mt-6 gap-6 place-content-center content-center"
       >
         <div class="hidden md:block">
-          <a href="https://criticalmoments.io" target="_blank" class="underline underline-offset-4">
+          <a
+            href="https://criticalmoments.io"
+            target="_blank"
+            class="underline underline-offset-4"
+          >
             <div class="rounded-xl border overflow-hidden">
               <div class="flex items-center gap-2 px-4 py-2 border-b bg-muted">
                 <div class="flex gap-1.5">
@@ -375,7 +398,10 @@
                   <div class="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
                 <div class="flex-1 text-center">
-                  <div class="inline-block rounded-md px-3 py-1 text-sm" style="background:#eee;">
+                  <div
+                    class="inline-block rounded-md px-3 py-1 text-sm"
+                    style="background:#eee;"
+                  >
                     https://criticalmoments.io
                   </div>
                 </div>
@@ -391,7 +417,11 @@
           </a>
         </div>
         <div class="md:hidden">
-          <a href="https://criticalmoments.io" target="_blank" class="underline underline-offset-4">
+          <a
+            href="https://criticalmoments.io"
+            target="_blank"
+            class="underline underline-offset-4"
+          >
             <div class="rounded-xl shadow-xl border overflow-hidden">
               <img
                 alt="Screenshot of criticalmoments.io homepage"
@@ -421,8 +451,12 @@
               > is the best example of SaaS Starter with style and real content.
             </div>
             <div class="mt-4 text-large">
-              <a href="https://criticalmoments.io" target="_blank" class="{buttonVariants({ variant: 'default' })} min-w-[200px] mt-3"
-                >See it in Action</a
+              <a
+                href="https://criticalmoments.io"
+                target="_blank"
+                class="{buttonVariants({
+                  variant: 'default',
+                })} min-w-[200px] mt-3">See it in Action</a
               >
             </div>
           </div>

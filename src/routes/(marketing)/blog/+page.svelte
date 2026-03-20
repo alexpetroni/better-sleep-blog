@@ -28,7 +28,9 @@
 
   {#each sortedBlogPosts as post}
     <a href={post.link}>
-      <div class="rounded-xl border bg-card shadow-xl my-6 flex-row overflow-hidden flex">
+      <div
+        class="rounded-xl border bg-card shadow-xl my-6 flex-row overflow-hidden flex"
+      >
         <div class="flex-none w-6 md:w-32 bg-secondary"></div>
         <div class="py-6 px-6">
           <div class="text-xl">{post.title}</div>
