@@ -1,17 +1,17 @@
 <script lang="ts" module>
-  import { tv, type VariantProps } from "tailwind-variants"
+  import { type VariantProps, tv } from "tailwind-variants"
 
   export const alertVariants = tv({
-    base: "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
+    base: "grid gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 group/alert relative w-full",
     variants: {
       variant: {
-        default: "bg-background text-foreground",
+        default: "bg-card text-card-foreground",
         destructive:
-          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+          "text-destructive bg-card *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
         success:
-          "border-success/50 text-success bg-success/10 [&>svg]:text-success",
+          "border-green-500/50 text-green-700 bg-green-50 dark:border-green-500/30 dark:text-green-400 dark:bg-green-950/50 *:[svg]:text-current",
         warning:
-          "border-warning/50 text-warning-foreground bg-warning/10 [&>svg]:text-warning",
+          "border-yellow-500/50 text-yellow-700 bg-yellow-50 dark:border-yellow-500/30 dark:text-yellow-400 dark:bg-yellow-950/50 *:[svg]:text-current",
       },
     },
     defaultVariants: {
@@ -23,26 +23,26 @@
 </script>
 
 <script lang="ts">
-  import { cn } from "$lib/utils.js"
   import type { HTMLAttributes } from "svelte/elements"
+  import { cn, type WithElementRef } from "$lib/utils.js"
 
   let {
+    ref = $bindable(null),
     class: className,
     variant = "default",
     children,
     ...restProps
-  }: HTMLAttributes<HTMLDivElement> & {
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> & {
     variant?: AlertVariant
-    children?: import("svelte").Snippet
   } = $props()
 </script>
 
 <div
-  class={cn(alertVariants({ variant }), className)}
+  bind:this={ref}
+  data-slot="alert"
   role="alert"
+  class={cn(alertVariants({ variant }), className)}
   {...restProps}
 >
-  {#if children}
-    {@render children()}
-  {/if}
+  {@render children?.()}
 </div>

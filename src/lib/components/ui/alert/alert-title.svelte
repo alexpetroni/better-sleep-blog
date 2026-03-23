@@ -1,21 +1,23 @@
 <script lang="ts">
-  import { cn } from "$lib/utils.js"
   import type { HTMLAttributes } from "svelte/elements"
+  import { cn, type WithElementRef } from "$lib/utils.js"
 
   let {
+    ref = $bindable(null),
     class: className,
     children,
     ...restProps
-  }: HTMLAttributes<HTMLHeadingElement> & {
-    children?: import("svelte").Snippet
-  } = $props()
+  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props()
 </script>
 
-<h5
-  class={cn("mb-1 font-medium leading-none tracking-tight", className)}
+<div
+  bind:this={ref}
+  data-slot="alert-title"
+  class={cn(
+    "font-medium group-has-[>svg]/alert:col-start-2 [&_a]:hover:text-foreground [&_a]:underline [&_a]:underline-offset-3",
+    className,
+  )}
   {...restProps}
 >
-  {#if children}
-    {@render children()}
-  {/if}
-</h5>
+  {@render children?.()}
+</div>

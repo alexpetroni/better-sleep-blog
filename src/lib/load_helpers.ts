@@ -20,28 +20,21 @@ export const load_helper = async (
     }
   }
 
-  // https://github.com/supabase/auth-js/issues/888#issuecomment-2189298518
-  if ("suppressGetSessionWarning" in supabase.auth) {
-    // @ts-expect-error - suppressGetSessionWarning is not part of the official API
-    supabase.auth.suppressGetSessionWarning = true
-  } else {
-    console.warn(
-      "SupabaseAuthClient#suppressGetSessionWarning was removed. See https://github.com/supabase/auth-js/issues/888.",
-    )
-  }
-  const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser()
-  if (userError || !user) {
-    return {
-      session: null,
-      user: null,
+  if (isBrowser()) {
+    // In the browser, validate the JWT by calling getUser()
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser()
+    if (userError || !user) {
+      return { session: null, user: null }
     }
+    return { session, user }
   }
 
+  // Server path: session was already validated by safeGetSession in hooks
   return {
     session,
-    user,
+    user: session.user,
   }
 }

@@ -1,7 +1,7 @@
 // src/hooks.server.ts
-import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
+import { PRIVATE_SUPABASE_SERVICE_ROLE_KEY } from "$env/static/private"
 import {
-  PUBLIC_SUPABASE_ANON_KEY,
+  PUBLIC_SUPABASE_PUBLISHABLE_KEY,
   PUBLIC_SUPABASE_URL,
 } from "$env/static/public"
 import { createServerClient } from "@supabase/ssr"
@@ -12,7 +12,7 @@ import { sequence } from "@sveltejs/kit/hooks"
 export const supabase: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createServerClient(
     PUBLIC_SUPABASE_URL,
-    PUBLIC_SUPABASE_ANON_KEY,
+    PUBLIC_SUPABASE_PUBLISHABLE_KEY,
     {
       cookies: {
         getAll: () => event.cookies.getAll(),
@@ -38,24 +38,14 @@ export const supabase: Handle = async ({ event, resolve }) => {
 
   event.locals.supabaseServiceRole = createClient(
     PUBLIC_SUPABASE_URL,
-    PRIVATE_SUPABASE_SERVICE_ROLE,
+    PRIVATE_SUPABASE_SERVICE_ROLE_KEY,
     { auth: { persistSession: false } },
   )
 
-  // https://github.com/supabase/auth-js/issues/888#issuecomment-2189298518
-  if ("suppressGetSessionWarning" in event.locals.supabase.auth) {
-    // @ts-expect-error - suppressGetSessionWarning is not part of the official API
-    event.locals.supabase.auth.suppressGetSessionWarning = true
-  } else {
-    console.warn(
-      "SupabaseAuthClient#suppressGetSessionWarning was removed. See https://github.com/supabase/auth-js/issues/888.",
-    )
-  }
-
   /**
    * Unlike `supabase.auth.getSession()`, which returns the session _without_
-   * validating the JWT, this function also calls `getUser()` to validate the
-   * JWT before returning the session.
+   * validating the JWT, this function calls `getClaims()` to validate the
+   * JWT locally (via cached JWKS) before returning the session.
    */
   event.locals.safeGetSession = async () => {
     const {
@@ -65,24 +55,23 @@ export const supabase: Handle = async ({ event, resolve }) => {
       return { session: null, user: null, amr: null }
     }
 
-    const {
-      data: { user },
-      error: userError,
-    } = await event.locals.supabase.auth.getUser()
-    if (userError) {
-      // JWT validation has failed
+    // getClaims() validates the JWT locally using cached JWKS — no network roundtrip.
+    // Use getUser() instead if you need to detect server-side session revocation.
+    const { error: claimsError } = await event.locals.supabase.auth.getClaims()
+    if (claimsError) {
+      // JWT validation failed
       return { session: null, user: null, amr: null }
     }
 
     const { data: aal, error: amrError } =
       await event.locals.supabase.auth.mfa.getAuthenticatorAssuranceLevel()
     if (amrError) {
-      return { session, user, amr: null }
+      return { session, user: session.user, amr: null }
     }
 
     return {
       session,
-      user,
+      user: session.user,
       amr: aal.currentAuthenticationMethods as AMREntry[],
     }
   }

@@ -1,6 +1,6 @@
 import { Resend } from "resend"
 import { env } from "$env/dynamic/private"
-import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
+import { PRIVATE_SUPABASE_SERVICE_ROLE_KEY } from "$env/static/private"
 import { PUBLIC_SUPABASE_URL } from "$env/static/public"
 import { createClient, type User } from "@supabase/supabase-js"
 import type { Database } from "../DatabaseDefinitions"
@@ -45,7 +45,7 @@ function getServiceRoleClient() {
   if (!_serviceRoleClient) {
     _serviceRoleClient = createClient<Database>(
       PUBLIC_SUPABASE_URL,
-      PRIVATE_SUPABASE_SERVICE_ROLE,
+      PRIVATE_SUPABASE_SERVICE_ROLE_KEY,
       { auth: { persistSession: false } },
     )
   }

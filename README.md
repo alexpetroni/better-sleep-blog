@@ -84,7 +84,7 @@ Want to learn why we picked the technologies we did, and how to keep your fork l
 - Web Framework: SvelteKit
 - CSS / Styling
   - Framework: TailwindCSS v4
-  - Component library: shadcn-svelte (with bits-ui)
+  - Component library: shadcn-svelte "nova" style (with bits-ui)
 - Suggested Hosting Stack
   - Host + CDN: Cloudflare Pages
   - Serverless compute: Cloudflare Workers
@@ -213,12 +213,12 @@ If you find build, formatting or linting rules too tedious, you can disable enfo
       1. Go to the Supabase dashboard's SQL Editor.
       2. Identify the last migration you applied, then run the SQL content of each subsequent file in chronological order.
 - Enable user signups in the [Supabase console](https://app.supabase.com/project/_/settings/auth): sometimes new signups are disabled by default in Supabase projects
-- Go to the [API Settings](https://supabase.com/dashboard/project/_/settings/api) page in the Dashboard. Find your Project-URL (PUBLIC_SUPABASE_URL), anon (PUBLIC_SUPABASE_ANON_KEY) and service_role (PRIVATE_SUPABASE_SERVICE_ROLE).
+- Go to the [API Settings](https://supabase.com/dashboard/project/_/settings/api) page in the Dashboard. Find your Project-URL (PUBLIC_SUPABASE_URL), publishable key (PUBLIC_SUPABASE_PUBLISHABLE_KEY) and service_role key (PRIVATE_SUPABASE_SERVICE_ROLE_KEY).
   - For local development: create a `.env.local` file:
     ```
     PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-    PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-    PRIVATE_SUPABASE_SERVICE_ROLE=your service_role secret
+    PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+    PRIVATE_SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
     ```
   - For production, add these two keys to your deployment environment (see below). We suggest you encrypt your service role.
 - Auth Callback
@@ -269,7 +269,7 @@ Our [official demo](https://saasstarter.work) is hosted on Cloudflare Pages, and
 Cloudflare Pages and Workers is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/get-started/git-integration/) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
 
 When prompted: add environment variables for your production environment (PUBLIC_SUPABASE_URL,
-PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_KEY).
+PUBLIC_SUPABASE_PUBLISHABLE_KEY, PRIVATE_SUPABASE_SERVICE_ROLE_KEY, and PRIVATE_STRIPE_API_KEY).
 
 Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-ca/application-services/products/analytics/) for usage metrics.
 
@@ -306,7 +306,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - This done automatically for blog posts from `posts.ts` metadata
 - Style
   - Theme: Update the theme colors in `src/app.css` by modifying the CSS variables (e.g. `--primary`, `--secondary`, `--accent`, etc.) to match your brand. The theme uses HSL color values. See [shadcn-svelte theming docs](https://www.shadcn-svelte.com/docs/theming) for details.
-  - UI Components: shadcn-svelte components live in `src/lib/components/ui/`. You can customize them directly or add new ones. See [shadcn-svelte docs](https://www.shadcn-svelte.com/docs) for available components.
+  - UI Components: shadcn-svelte components live in `src/lib/components/ui/`. You can customize them directly or add new ones via `npx shadcn-svelte@latest add <component>`. See [shadcn-svelte docs](https://www.shadcn-svelte.com/docs) for available components.
   - Update the marketing page layout `src/routes/(marketing)/+layout.svelte`: customize design, delete unwanted pages from header and footer.
   - Style: make it your own look and feel.
   - Update the favicon in the `/static/` directory.
