@@ -7,10 +7,9 @@
   import { Alert, AlertDescription } from "$lib/components/ui/alert/index.js"
 
   let { data } = $props()
-  let { supabase } = data
 
   onMount(() => {
-    supabase.auth.onAuthStateChange((event) => {
+    data.supabase.auth.onAuthStateChange((event) => {
       // Redirect to account after successful login
       if (event == "SIGNED_IN") {
         // Delay needed because order of callback not guaranteed.

@@ -21,12 +21,13 @@
 
   let { data, form }: Props = $props()
 
-  let { user, profile } = data
+  const user = $derived(data.user)
+  const profile = $derived(data.profile)
 
   let loading = $state(false)
-  let fullName: string = profile?.full_name ?? ""
-  let companyName: string = profile?.company_name ?? ""
-  let website: string = profile?.website ?? ""
+  const fullName = $derived(profile?.full_name ?? "")
+  const companyName = $derived(profile?.company_name ?? "")
+  const website = $derived(profile?.website ?? "")
 
   const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
     let errors = liveForm?.errorFields ?? []

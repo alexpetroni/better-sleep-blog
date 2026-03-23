@@ -6,7 +6,6 @@
   adminSection.value = "settings"
 
   let { data } = $props()
-  let { session } = data
 </script>
 
 <svelte:head>
@@ -19,8 +18,8 @@
   title="Delete Account"
   editable={true}
   dangerous={true}
-  message="Deleting your account can not be undone. You are currently logged in as '{session
-    ?.user?.email}'"
+  message="Deleting your account can not be undone. You are currently logged in as '{data
+    .session?.user?.email}'"
   saveButtonTitle="Delete Account"
   successTitle="Account queued for deletion"
   successBody="Your account will be deleted shortly."

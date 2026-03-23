@@ -4,19 +4,19 @@
 
   let { data, children } = $props()
 
-  let { supabase, session } = $state(data)
-  $effect(() => {
-    ;({ supabase, session } = data)
-  })
+  const supabase = $derived(data.supabase)
+  const session = $derived(data.session)
 
   onMount(() => {
-    const { data } = supabase.auth.onAuthStateChange((event, _session) => {
-      if (_session?.expires_at !== session?.expires_at) {
-        invalidate("supabase:auth")
-      }
-    })
+    const { data: authData } = supabase.auth.onAuthStateChange(
+      (event, _session) => {
+        if (_session?.expires_at !== session?.expires_at) {
+          invalidate("supabase:auth")
+        }
+      },
+    )
 
-    return () => data.subscription.unsubscribe()
+    return () => authData.subscription.unsubscribe()
   })
 </script>
 

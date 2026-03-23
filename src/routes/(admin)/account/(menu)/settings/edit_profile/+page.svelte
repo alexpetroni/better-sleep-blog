@@ -6,8 +6,7 @@
   adminSection.value = "settings"
 
   let { data } = $props()
-
-  let { profile } = data
+  const profile = $derived(data.profile)
 </script>
 
 <svelte:head>

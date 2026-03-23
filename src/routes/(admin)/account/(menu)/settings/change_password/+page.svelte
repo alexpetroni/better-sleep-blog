@@ -9,18 +9,21 @@
   adminSection.value = "settings"
 
   let { data } = $props()
-  let { user, supabase } = data
+  const user = $derived(data.user)
+  const supabase = $derived(data.supabase)
 
   // True if definitely has a password, but can be false if they
   // logged in with oAuth or email link
 
-  // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-  let hasPassword = user?.amr?.find((x) => x.method === "password")
-    ? true
-    : false
+  const hasPassword = $derived.by(() => {
+    // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
+    return user?.amr?.find((x) => x.method === "password") ? true : false
+  })
 
-  // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-  let usingOAuth = user?.amr?.find((x) => x.method === "oauth") ? true : false
+  const usingOAuth = $derived.by(() => {
+    // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
+    return user?.amr?.find((x) => x.method === "oauth") ? true : false
+  })
 
   let sendBtnDisabled = $state(false)
   let sendBtnText = $state("Send Set Password Email")

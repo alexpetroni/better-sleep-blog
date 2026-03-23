@@ -6,8 +6,6 @@
   adminSection.value = "settings"
 
   let { data } = $props()
-
-  let { user } = data
 </script>
 
 <svelte:head>
@@ -26,7 +24,7 @@
     {
       id: "email",
       label: "Email",
-      initialValue: user?.email ?? "",
+      initialValue: data.user?.email ?? "",
       placeholder: "Email address",
     },
   ]}

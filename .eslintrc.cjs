@@ -25,10 +25,13 @@ module.exports = {
           typescript: "@typescript-eslint/parser",
         },
       },
+    },
+    {
+      // shadcn-svelte UI components use ...restProps with $props() to forward
+      // arbitrary HTML attributes. This triggers custom_element_props_identifier
+      // which is irrelevant since these aren't custom elements.
+      files: ["src/lib/components/ui/**/*.svelte"],
       rules: {
-        // Svelte 5 warns about destructuring `data` from $props() since it
-        // captures only the initial value. This is intentional in SvelteKit
-        // page components where `data` doesn't change after load.
         "svelte/valid-compile": ["error", { ignoreWarnings: true }],
       },
     },
