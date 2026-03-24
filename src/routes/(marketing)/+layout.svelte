@@ -20,13 +20,6 @@
     </div>
     <div class="flex-none">
       <ul class="hidden sm:flex items-center gap-1 px-1 font-bold text-lg">
-        <li class="md:mx-4">
-          <a
-            href="https://github.com/CriticalMoments/CMSaasStarter"
-            class="inline-flex items-center justify-center rounded-md border border-primary px-3 py-1.5 text-sm font-medium transition-colors hover:bg-primary/10"
-            >★ us on Github</a
-          >
-        </li>
         <li class="md:mx-2">
           <a
             href="/blog"
@@ -36,22 +29,22 @@
         </li>
         <li class="md:mx-2">
           <a
-            href="/pricing"
+            href="/account"
             class="rounded-md px-3 py-1.5 transition-colors hover:bg-accent/10"
-            >Pricing</a
+            >Cont</a
           >
         </li>
         <li class="md:mx-2">
           <a
-            href="/account"
+            href="/contact_us"
             class="rounded-md px-3 py-1.5 transition-colors hover:bg-accent/10"
-            >Account</a
+            >Contact</a
           >
         </li>
         <li class="md:mx-0">
           <a
             href="/search"
-            aria-label="Search"
+            aria-label="Căutare"
             class="inline-flex items-center justify-center rounded-full h-9 w-9 transition-colors hover:bg-accent/10"
           >
             <svg
@@ -103,24 +96,19 @@
               onclick={() => (mobileMenuOpen = false)}>Blog</a
             >
             <a
-              href="/pricing"
-              class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Pricing</a
-            >
-            <a
               href="/account"
               class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Account</a
+              onclick={() => (mobileMenuOpen = false)}>Cont</a
+            >
+            <a
+              href="/contact_us"
+              class="block rounded-md px-3 py-2 hover:bg-accent/10"
+              onclick={() => (mobileMenuOpen = false)}>Contact</a
             >
             <a
               href="/search"
               class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Search</a
-            >
-            <a
-              href="https://github.com/CriticalMoments/CMSaasStarter"
-              class="block rounded-md px-3 py-2 border border-primary mt-1 hover:bg-primary/10"
-              onclick={() => (mobileMenuOpen = false)}>★ us on Github</a
+              onclick={() => (mobileMenuOpen = false)}>Căutare</a
             >
           </div>
         {/if}
@@ -143,31 +131,25 @@
     <nav class="flex flex-col">
       <span
         class="font-semibold text-sm uppercase tracking-wider opacity-80 mb-2"
-        >Explore</span
+        >Explorează</span
       >
-      <a class="hover:underline mb-1" href="/">Overview</a>
-      <a class="hover:underline my-1" href="/pricing">Pricing</a>
+      <a class="hover:underline mb-1" href="/">Acasă</a>
       <a class="hover:underline my-1" href="/blog">Blog</a>
-      <a class="hover:underline my-1" href="/contact_us">Contact Us</a>
-      <a
-        class="hover:underline my-1"
-        href="https://github.com/CriticalMoments/CMSaasStarter">Github</a
-      >
+      <a class="hover:underline my-1" href="/contact_us">Contact</a>
     </nav>
     <aside class="mt-6 md:mt-0">
       <span
         class="font-semibold text-sm uppercase tracking-wider opacity-80 mb-2 block"
-        >Sponsor</span
+        >Partener</span
       >
-      <a class="max-w-[260px] block" href="https://getkiln.ai">
-        <div class="font-bold text-3xl mb-1">Kiln AI</div>
-        <div class="font-medium mb-3">Build High Quality AI Products</div>
+      <a class="max-w-[260px] block" href="https://zenyth.ro">
+        <div class="font-bold text-3xl mb-1">Zenyth.ro</div>
+        <div class="font-medium mb-3">Suplimente alimentare premium</div>
         <div class="font-light">
-          Use advanced AI tactics, and collaborate with your team. Free apps for
-          Mac and Windows.
+          Descoperă suplimentele Zenyth pentru un somn odihnitor și sănătos.
         </div>
         <div class="underline underline-offset-4 text-sm font-bold mt-2">
-          Learn More
+          Află mai multe
         </div>
       </a>
     </aside>

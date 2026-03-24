@@ -18,13 +18,13 @@
   const formFields: FormField[] = [
     {
       id: "first_name",
-      label: "First Name *",
+      label: "Prenume *",
       inputType: "text",
       autocomplete: "given-name",
     },
     {
       id: "last_name",
-      label: "Last Name *",
+      label: "Nume *",
       inputType: "text",
       autocomplete: "family-name",
     },
@@ -35,20 +35,8 @@
       autocomplete: "email",
     },
     {
-      id: "phone",
-      label: "Phone Number",
-      inputType: "tel",
-      autocomplete: "tel",
-    },
-    {
-      id: "company",
-      label: "Company Name",
-      inputType: "text",
-      autocomplete: "organization",
-    },
-    {
       id: "message",
-      label: "Message",
+      label: "Mesaj",
       inputType: "textarea",
       autocomplete: "off",
     },
@@ -66,7 +54,9 @@
       } else if (result.type === "failure") {
         errors = result.data?.errors ?? {}
       } else if (result.type === "error") {
-        errors = { _: "An error occurred. Please check inputs and try again." }
+        errors = {
+          _: "A apărut o eroare. Verifică datele introduse și încearcă din nou.",
+        }
       }
     }
   }
@@ -79,19 +69,15 @@
     class="max-w-[400px] lg:max-w-[500px] flex flex-col place-content-center p-4 lg:mr-8 lg:mb-8 lg:min-h-[70vh]"
   >
     <div class="px-6">
-      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contact Us</h1>
-      <p class="text-lg">Talk to one of our service professionals to:</p>
+      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contactează-ne</h1>
+      <p class="text-lg">Scrie-ne dacă:</p>
       <ul class="list-disc list-outside pl-6 py-4 space-y-1">
-        <li class="">Get a live demo</li>
-        <li class="">Discuss your specific needs</li>
-        <li>Get a quote</li>
-        <li>Answer any technical questions you have</li>
+        <li>Ai o întrebare despre somn sau sănătate</li>
+        <li>Vrei să propui un subiect pentru un articol</li>
+        <li>Dorești o colaborare sau un parteneriat</li>
+        <li>Ai feedback sau sugestii pentru blog</li>
       </ul>
-      <p>Once you complete the form, we'll reach out to you! *</p>
-      <p class="text-sm pt-8">
-        *Not really for this demo page, but you should say something like that
-        😉
-      </p>
+      <p>Completează formularul și îți vom răspunde cât de curând.</p>
     </div>
   </div>
 
@@ -103,8 +89,8 @@
         <div
           class="rounded-xl border bg-card shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
         >
-          <div class="text-2xl font-bold mb-4">Thank you!</div>
-          <p class="">We've received your message and will be in touch soon.</p>
+          <div class="text-2xl font-bold mb-4">Mulțumim!</div>
+          <p class="">Am primit mesajul tău și te vom contacta în curând.</p>
         </div>
       </div>
     {:else}
@@ -153,11 +139,12 @@
 
           {#if Object.keys(errors).length > 0}
             <p class="text-red-600 text-sm mb-2">
-              Please resolve above issues.
+              Te rugăm să corectezi erorile de mai sus.
             </p>
           {/if}
 
-          <Button disabled={loading}>{loading ? "Submitting" : "Submit"}</Button
+          <Button disabled={loading}
+            >{loading ? "Se trimite..." : "Trimite"}</Button
           >
         </form>
       </div>

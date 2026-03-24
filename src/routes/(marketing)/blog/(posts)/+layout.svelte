@@ -1,8 +1,8 @@
 <script lang="ts">
   import { page } from "$app/state"
   import { error } from "@sveltejs/kit"
-  import { sortedBlogPosts, type BlogPost } from "./../posts"
-  import { WebsiteName } from "../../../../config"
+  import { sortedBlogPosts, blogInfo, type BlogPost } from "./../posts"
+  import { WebsiteName, WebsiteBaseUrl } from "../../../../config"
   interface Props {
     children?: import("svelte").Snippet
   }
@@ -24,42 +24,65 @@
   }
   let currentPost = $derived(getCurrentPost(page.url.pathname))
 
-  function buildLdJson(post: BlogPost) {
+  function buildLdJson(post: BlogPost, url: string) {
     return {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.title,
+      description: post.description,
+      url,
       datePublished: post.parsedDate?.toISOString(),
       dateModified: post.parsedDate?.toISOString(),
+      inLanguage: "ro",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": url,
+      },
+      isPartOf: {
+        "@type": "Blog",
+        name: blogInfo.name,
+        url: `${WebsiteBaseUrl}/blog`,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: WebsiteName,
+        url: WebsiteBaseUrl,
+      },
     }
   }
+  let pageUrl = $derived(`${WebsiteBaseUrl}${currentPost.link}`)
   let jsonldScript = $derived(
     `<script type="application/ld+json">${
-      JSON.stringify(buildLdJson(currentPost)) + "<"
+      JSON.stringify(buildLdJson(currentPost, pageUrl)) + "<"
     }/script>`,
   )
-
-  let pageUrl = $derived(page.url.origin + page.url.pathname)
 </script>
 
 <svelte:head>
   <title>{currentPost.title}</title>
   <meta name="description" content={currentPost.description} />
+  <link rel="canonical" href={pageUrl} />
 
-  <!-- Facebook -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
   <meta property="og:title" content={currentPost.title} />
   <meta property="og:description" content={currentPost.description} />
   <meta property="og:site_name" content={WebsiteName} />
   <meta property="og:url" content={pageUrl} />
-  <!-- <meta property="og:image" content="https://samplesite.com/image.jpg"> -->
+  <meta property="og:locale" content="ro_RO" />
+  <meta
+    property="article:published_time"
+    content={currentPost.parsedDate?.toISOString()}
+  />
+  <meta
+    property="article:modified_time"
+    content={currentPost.parsedDate?.toISOString()}
+  />
 
   <!-- Twitter -->
-  <!-- "summary", "summary_large_image", "app", or "player" -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={currentPost.title} />
   <meta name="twitter:description" content={currentPost.description} />
-  <!-- <meta name="twitter:site" content="@samplesite"> -->
-  <!-- <meta name="twitter:image" content="https://samplesite.com/image.jpg"> -->
 
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html jsonldScript}

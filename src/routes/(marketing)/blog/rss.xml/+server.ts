@@ -20,6 +20,7 @@ export function GET({ url }) {
     <title>${encodeXML(blogInfo.name)}</title>
     <link>${url.origin}/blog</link>
     <description>${encodeXML(blogInfo.description)}</description>
+    <language>ro</language>
     <atom:link href="${url.origin}/blog/rss.xml" rel="self" type="application/rss+xml" />`
   for (const post of sortedBlogPosts) {
     body += `

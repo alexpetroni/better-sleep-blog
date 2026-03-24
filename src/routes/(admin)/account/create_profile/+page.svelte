@@ -10,8 +10,6 @@
 
   interface Profile {
     full_name?: string
-    company_name?: string
-    website?: string
   }
 
   interface Props {
@@ -26,8 +24,6 @@
 
   let loading = $state(false)
   const fullName = $derived(profile?.full_name ?? "")
-  const companyName = $derived(profile?.company_name ?? "")
-  const website = $derived(profile?.website ?? "")
 
   const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
     let errors = liveForm?.errorFields ?? []
@@ -45,7 +41,7 @@
 </script>
 
 <svelte:head>
-  <title>Create Profile</title>
+  <title>Creează profil</title>
 </svelte:head>
 
 <div
@@ -53,7 +49,7 @@
 >
   <div class="flex flex-col w-64 lg:w-80">
     <div>
-      <h1 class="text-2xl font-bold mb-6">Create Profile</h1>
+      <h1 class="text-2xl font-bold mb-6">Creează profil</h1>
       <form
         class="form-widget"
         method="POST"
@@ -62,13 +58,13 @@
       >
         <div class="mt-4">
           <label for="fullName">
-            <span class="text-l text-center">Your Name</span>
+            <span class="text-l text-center">Numele tău</span>
           </label>
           <input
             id="fullName"
             name="fullName"
             type="text"
-            placeholder="Your full name"
+            placeholder="Numele complet"
             class="{fieldError(form, 'fullName')
               ? 'border-destructive focus-visible:ring-destructive'
               : ''} mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -78,36 +74,15 @@
         </div>
 
         <div class="mt-4">
-          <label for="companyName">
-            <span class="text-l text-center">Company Name</span>
+          <label for="email">
+            <span class="text-l text-center">Email</span>
           </label>
           <input
-            id="companyName"
-            name="companyName"
-            type="text"
-            placeholder="Company name"
-            class="{fieldError(form, 'companyName')
-              ? 'border-destructive focus-visible:ring-destructive'
-              : ''} mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            value={form?.companyName ?? companyName}
-            maxlength="50"
-          />
-        </div>
-
-        <div class="mt-4">
-          <label for="website">
-            <span class="text-l text-center">Company Website</span>
-          </label>
-          <input
-            id="website"
-            name="website"
-            type="text"
-            placeholder="Company website"
-            class="{fieldError(form, 'website')
-              ? 'border-destructive focus-visible:ring-destructive'
-              : ''} mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            value={form?.website ?? website}
-            maxlength="50"
+            id="email"
+            type="email"
+            value={user?.email}
+            disabled
+            class="mt-1 flex h-9 w-full max-w-xs rounded-md border border-input bg-muted px-3 py-1 text-base text-muted-foreground"
           />
         </div>
 
@@ -118,15 +93,15 @@
         {/if}
         <div class="mt-4">
           <Button type="submit" class="mt-3 min-w-[200px]" disabled={loading}>
-            {loading ? "..." : "Create Profile"}
+            {loading ? "..." : "Creează profil"}
           </Button>
         </div>
       </form>
 
       <div class="text-sm text-slate-800 mt-14">
-        You are logged in as {user?.email}.
+        Ești autentificat ca {user?.email}.
         <br />
-        <a class="underline" href="/account/sign_out"> Sign out </a>
+        <a class="underline" href="/account/sign_out"> Deconectare </a>
       </div>
     </div>
   </div>

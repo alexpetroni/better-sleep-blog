@@ -237,26 +237,18 @@ export const actions = {
     const fieldMaxTextLength = 50
     const errorFields = []
     if (!fullName) {
-      validationError = "Name is required"
+      validationError = "Numele este obligatoriu"
       errorFields.push("fullName")
     } else if (fullName.length > fieldMaxTextLength) {
-      validationError = `Name must be less than ${fieldMaxTextLength} characters`
+      validationError = `Numele trebuie să aibă mai puțin de ${fieldMaxTextLength} caractere`
       errorFields.push("fullName")
     }
-    if (!companyName) {
-      validationError =
-        "Company name is required. If this is a hobby project or personal app, please put your name."
-      errorFields.push("companyName")
-    } else if (companyName.length > fieldMaxTextLength) {
-      validationError = `Company name must be less than ${fieldMaxTextLength} characters`
+    if (companyName && companyName.length > fieldMaxTextLength) {
+      validationError = `Numele companiei trebuie să aibă mai puțin de ${fieldMaxTextLength} caractere`
       errorFields.push("companyName")
     }
-    if (!website) {
-      validationError =
-        "Company website is required. An app store URL is a good alternative if you don't have a website."
-      errorFields.push("website")
-    } else if (website.length > fieldMaxTextLength) {
-      validationError = `Company website must be less than ${fieldMaxTextLength} characters`
+    if (website && website.length > fieldMaxTextLength) {
+      validationError = `Website-ul trebuie să aibă mai puțin de ${fieldMaxTextLength} caractere`
       errorFields.push("website")
     }
     if (validationError) {
@@ -303,18 +295,18 @@ export const actions = {
       priorProfile?.updated_at === null && priorProfileError === null
     if (newProfile) {
       await sendAdminEmail({
-        subject: "Profile Created",
-        body: `Profile created by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
+        subject: "Profil creat",
+        body: `Profil creat de ${session.user.email}\nNume: ${fullName}`,
       })
 
       // Send welcome email
       await sendUserEmail({
         user: session.user,
-        subject: "Welcome!",
-        from_email: "no-reply@saasstarter.work",
+        subject: "Bine ai venit!",
+        from_email: "no-reply@better-sleep.work",
         template_name: "welcome_email",
         template_properties: {
-          companyName: "SaaS Starter",
+          companyName: "Better Sleep",
           WebsiteBaseUrl: WebsiteBaseUrl,
         },
       })

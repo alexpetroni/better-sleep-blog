@@ -4,7 +4,7 @@
 
 <svelte:head>
   <title>{blogInfo.name}</title>
-  <meta name="description" content="Our blog posts." />
+  <meta name="description" content={blogInfo.description} />
 </svelte:head>
 
 <div class="py-8 lg:py-12 px-6 max-w-lg mx-auto">
@@ -24,7 +24,7 @@
       />
     </a>
   </div>
-  <div class="text-lg text-center">A demo blog with sample content.</div>
+  <div class="text-lg text-center">{blogInfo.description}</div>
 
   {#each sortedBlogPosts as post}
     <a href={post.link}>
