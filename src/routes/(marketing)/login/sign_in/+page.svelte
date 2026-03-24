@@ -16,7 +16,7 @@
         // Give the layout callback priority to update state or
         // we'll just bounch back to login when /account tries to load
         setTimeout(() => {
-          goto("/account")
+          goto("/")
         }, 1)
       }
     })
@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-  <title>Sign in</title>
+  <title>Conectare</title>
 </svelte:head>
 
 {#if page.url.searchParams.get("verified") == "true"}
@@ -41,10 +41,10 @@
         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
       /></svg
     >
-    <AlertDescription>Email verified! Please sign in.</AlertDescription>
+    <AlertDescription>Email verificat! Te poți conecta.</AlertDescription>
   </Alert>
 {/if}
-<h1 class="text-2xl font-bold mb-6">Sign In</h1>
+<h1 class="text-2xl font-bold mb-6">Conectare</h1>
 <Auth
   supabaseClient={data.supabase}
   view="sign_in"
@@ -56,8 +56,8 @@
   additionalData={undefined}
 />
 <div class="text-l text-slate-800 mt-4">
-  <a class="underline" href="/login/forgot_password">Forgot password?</a>
+  <a class="underline" href="/login/forgot_password">Ai uitat parola?</a>
 </div>
 <div class="text-l text-slate-800 mt-3">
-  Don't have an account? <a class="underline" href="/login/sign_up">Sign up</a>.
+  Nu ai cont? <a class="underline" href="/login/sign_up">Creează cont</a>.
 </div>

@@ -7,28 +7,28 @@
 </script>
 
 <svelte:head>
-  <title>Reset Password</title>
+  <title>Resetează parola</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-bold mb-6">Setări</h1>
 
 <SettingsModule
-  title="Reset Password"
+  title="Resetează parola"
   editable={true}
-  saveButtonTitle="Reset Password"
-  successTitle="Password Changed"
-  successBody="On next sign in, use your new password."
+  saveButtonTitle="Resetează parola"
+  successTitle="Parola a fost schimbată"
+  successBody="La următoarea conectare, folosește noua parolă."
   formTarget="/account/api?/updatePassword"
   fields={[
     {
       id: "newPassword1",
-      label: "New Password",
+      label: "Parolă nouă",
       initialValue: "",
       inputType: "password",
     },
     {
       id: "newPassword2",
-      label: "Confirm New Password",
+      label: "Confirmă parola nouă",
       initialValue: "",
       inputType: "password",
     },

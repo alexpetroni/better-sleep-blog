@@ -9,25 +9,25 @@
 </script>
 
 <svelte:head>
-  <title>Delete Account</title>
+  <title>Șterge contul</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-bold mb-6">Setări</h1>
 
 <SettingsModule
-  title="Delete Account"
+  title="Șterge contul"
   editable={true}
   dangerous={true}
-  message="Deleting your account can not be undone. You are currently logged in as '{data
+  message="Ștergerea contului nu poate fi anulată. Ești conectat ca '{data
     .session?.user?.email}'"
-  saveButtonTitle="Delete Account"
-  successTitle="Account queued for deletion"
-  successBody="Your account will be deleted shortly."
+  saveButtonTitle="Șterge contul"
+  successTitle="Contul a fost programat pentru ștergere"
+  successBody="Contul tău va fi șters în curând."
   formTarget="/account/api?/deleteAccount"
   fields={[
     {
       id: "currentPassword",
-      label: "Current Password",
+      label: "Parola curentă",
       initialValue: "",
       inputType: "password",
     },

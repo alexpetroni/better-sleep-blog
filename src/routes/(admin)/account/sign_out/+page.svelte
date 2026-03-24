@@ -4,13 +4,13 @@
 
   let { data } = $props()
 
-  let message = $state("Signing out....")
+  let message = $state("Se deconectează....")
 
   // on mount, sign out
   onMount(() => {
     data.supabase.auth.signOut().then(({ error }) => {
       if (error) {
-        message = "There was an issue signing out."
+        message = "A apărut o problemă la deconectare."
       } else {
         goto("/")
       }

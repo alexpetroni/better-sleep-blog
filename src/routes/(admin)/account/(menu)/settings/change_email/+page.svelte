@@ -9,23 +9,23 @@
 </script>
 
 <svelte:head>
-  <title>Change Email</title>
+  <title>Schimbă email</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-bold mb-6">Setări</h1>
 
 <SettingsModule
-  title="Change Email"
+  title="Schimbă email"
   editable={true}
-  successTitle="Email change initiated"
-  successBody="You should receive emails at both the old and new address to confirm the change. Please click the link in both emails to finalized the change. Until finalized, you must sign in with your current email."
+  successTitle="Schimbarea de email a fost inițiată"
+  successBody="Vei primi emailuri la adresa veche și la cea nouă pentru a confirma schimbarea. Te rugăm să apeși pe linkul din ambele emailuri. Până la finalizare, te poți conecta cu emailul curent."
   formTarget="/account/api?/updateEmail"
   fields={[
     {
       id: "email",
       label: "Email",
       initialValue: data.user?.email ?? "",
-      placeholder: "Email address",
+      placeholder: "Adresă de email",
     },
   ]}
 />

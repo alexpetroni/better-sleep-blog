@@ -43,13 +43,13 @@ export const actions = {
 
     let validationError
     if (!email || email === "") {
-      validationError = "An email address is required"
+      validationError = "Adresa de email este obligatorie"
     }
     // Dead simple check -- there's no standard here (which is followed),
     // and lots of errors will be missed until we actually email to verify, so
     // just do that
     else if (!email.includes("@")) {
-      validationError = "A valid email address is required"
+      validationError = "Adresa de email nu este validă"
     }
     if (validationError) {
       return fail(400, {
@@ -66,7 +66,7 @@ export const actions = {
     if (error) {
       console.error("Error updating email", error)
       return fail(500, {
-        errorMessage: "Unknown error. If this persists please contact us.",
+        errorMessage: "Eroare necunoscută. Dacă persistă, contactează-ne.",
         email,
       })
     }
@@ -98,7 +98,7 @@ export const actions = {
         // 15 mins in milliseconds
         return fail(400, {
           errorMessage:
-            'Recovery code expired. Please log out, then use "Forgot Password" on the sign in page to reset your password. Codes are valid for 15 minutes.',
+            'Codul de recuperare a expirat. Deconectează-te, apoi folosește "Am uitat parola" pe pagina de conectare. Codurile sunt valide 15 minute.',
           errorFields: [],
           newPassword1: "",
           newPassword2: "",
@@ -110,29 +110,29 @@ export const actions = {
     let validationError
     const errorFields = []
     if (!newPassword1) {
-      validationError = "You must type a new password"
+      validationError = "Trebuie să introduci o parolă nouă"
       errorFields.push("newPassword1")
     }
     if (!newPassword2) {
-      validationError = "You must type the new password twice"
+      validationError = "Trebuie să introduci parola nouă de două ori"
       errorFields.push("newPassword2")
     }
     if (newPassword1.length < 6) {
-      validationError = "The new password must be at least 6 characters long"
+      validationError = "Parola nouă trebuie să aibă cel puțin 6 caractere"
       errorFields.push("newPassword1")
     }
     if (newPassword1.length > 72) {
-      validationError = "The new password can be at most 72 characters long"
+      validationError = "Parola nouă poate avea cel mult 72 de caractere"
       errorFields.push("newPassword1")
     }
     if (newPassword1 !== newPassword2) {
-      validationError = "The passwords don't match"
+      validationError = "Parolele nu se potrivesc"
       errorFields.push("newPassword1")
       errorFields.push("newPassword2")
     }
     if (!currentPassword && !isRecoverySession) {
       validationError =
-        "You must include your current password. If you forgot it, sign out then use 'forgot password' on the sign in page."
+        "Trebuie să introduci parola curentă. Dacă ai uitat-o, deconectează-te și folosește 'Am uitat parola' pe pagina de conectare."
       errorFields.push("currentPassword")
     }
     if (validationError) {
@@ -165,7 +165,7 @@ export const actions = {
     if (error) {
       console.error("Error updating password", error)
       return fail(500, {
-        errorMessage: "Unknown error. If this persists please contact us.",
+        errorMessage: "Eroare necunoscută. Dacă persistă, contactează-ne.",
         newPassword1: "",
         newPassword2: "",
         currentPassword: "",
@@ -191,7 +191,7 @@ export const actions = {
     if (!currentPassword) {
       return fail(400, {
         errorMessage:
-          "You must provide your current password to delete your account. If you forgot it, sign out then use 'forgot password' on the sign in page.",
+          "Trebuie să introduci parola curentă pentru a șterge contul. Dacă ai uitat-o, deconectează-te și folosește 'Am uitat parola' pe pagina de conectare.",
         errorFields: ["currentPassword"],
         currentPassword: "",
       })
@@ -214,7 +214,7 @@ export const actions = {
     if (error) {
       console.error("Error deleting user", error)
       return fail(500, {
-        errorMessage: "Unknown error. If this persists please contact us.",
+        errorMessage: "Eroare necunoscută. Dacă persistă, contactează-ne.",
         currentPassword: "",
       })
     }
@@ -283,7 +283,7 @@ export const actions = {
     if (error) {
       console.error("Error updating profile", error)
       return fail(500, {
-        errorMessage: "Unknown error. If this persists please contact us.",
+        errorMessage: "Eroare necunoscută. Dacă persistă, contactează-ne.",
         fullName,
         companyName,
         website,

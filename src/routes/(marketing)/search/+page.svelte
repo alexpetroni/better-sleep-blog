@@ -87,8 +87,8 @@
 <svelte:window onkeydown={onKeyDown} />
 
 <svelte:head>
-  <title>Search</title>
-  <meta name="description" content="Search our website." />
+  <title>Căutare</title>
+  <meta name="description" content="Caută pe site-ul nostru." />
 </svelte:head>
 
 <div class="py-8 lg:py-12 px-6 max-w-lg mx-auto">
@@ -98,7 +98,7 @@
     <div
       class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight"
     >
-      Search
+      Căutare
     </div>
   </div>
   <div
@@ -108,7 +108,7 @@
       id="search-input"
       type="text"
       class="flex h-9 w-full bg-transparent py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none"
-      placeholder="Search"
+      placeholder="Căutare"
       bind:value={searchQuery}
       onfocus={() => (focusItem = 0)}
       aria-label="Search input"
@@ -116,17 +116,17 @@
   </div>
 
   {#if loading && searchQuery.length > 0}
-    <div class="text-center mt-10 text-highlight text-xl">Loading...</div>
+    <div class="text-center mt-10 text-highlight text-xl">Se încarcă...</div>
   {/if}
 
   {#if error}
     <div class="text-center mt-10 text-highlight text-xl">
-      Error connecting to search. Please try again later.
+      Eroare la conectarea la căutare. Te rugăm să încerci din nou mai târziu.
     </div>
   {/if}
 
   {#if !loading && searchQuery.length > 0 && results.length === 0 && !error}
-    <div class="text-center mt-10 text-highlight text-xl">No results found</div>
+    <div class="text-center mt-10 text-highlight text-xl">Nu s-au găsit rezultate</div>
     {#if dev}
       <div class="text-center mt-4 font-mono">
         Development mode only message: if you're missing content, rebuild your

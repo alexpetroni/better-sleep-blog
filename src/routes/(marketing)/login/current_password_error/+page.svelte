@@ -1,19 +1,19 @@
 <svelte:head>
-  <title>Current Password Incorrect</title>
+  <title>Parolă curentă incorectă</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Current Password Incorrect</h1>
+<h1 class="text-2xl font-bold mb-6">Parolă curentă incorectă</h1>
 
 <p>
-  You attempted edit your account with an incorrect current password, and have
-  been logged out.
+  Ai încercat să îți modifici contul cu o parolă curentă incorectă și ai fost
+  deconectat.
 </p>
 <p class="mt-6">
-  If you remember your password <a href="/login/sign_in" class="link">sign in</a
-  > and try again.
+  Dacă îți amintești parola <a href="/login/sign_in" class="link">conectează-te</a
+  > și încearcă din nou.
 </p>
 <p class="mt-6">
-  If you forget your password <a href="/login/forgot_password" class="link"
-    >reset it</a
+  Dacă ai uitat parola <a href="/login/forgot_password" class="link"
+    >resetează-o</a
   >.
 </p>

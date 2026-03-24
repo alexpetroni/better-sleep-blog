@@ -5,21 +5,21 @@
 </script>
 
 <svelte:head>
-  <title>Change Email Subscription</title>
+  <title>Schimbă abonarea email</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Email Subscription</h1>
+<h1 class="text-2xl font-bold mb-6">Abonare email</h1>
 
 <SettingsModule
   editable={true}
-  title="Subscription"
+  title="Abonare"
   message={unsubscribed
-    ? "You are currently unsubscribed from emails"
-    : "You are currently subscribed to emails"}
-  saveButtonTitle={unsubscribed ? "Re-subscribe" : "Unsubscribe"}
+    ? "Ești dezabonat de la emailuri"
+    : "Ești abonat la emailuri"}
+  saveButtonTitle={unsubscribed ? "Reabonare" : "Dezabonare"}
   successBody={unsubscribed
-    ? "You have been re-subscribed to emails"
-    : "You have been unsubscribed from emails"}
+    ? "Ai fost reabonat la emailuri"
+    : "Ai fost dezabonat de la emailuri"}
   formTarget="/account/api?/toggleEmailSubscription"
   fields={[]}
 />

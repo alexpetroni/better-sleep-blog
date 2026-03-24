@@ -11,28 +11,18 @@
 </script>
 
 <svelte:head>
-  <title>Settings</title>
+  <title>Setări</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-bold mb-6">Setări</h1>
 
 <SettingsModule
-  title="Profile"
+  title="Profil"
   editable={false}
   fields={[
-    { id: "fullName", label: "Name", initialValue: profile?.full_name ?? "" },
-    {
-      id: "companyName",
-      label: "Company Name",
-      initialValue: profile?.company_name ?? "",
-    },
-    {
-      id: "website",
-      label: "Company Website",
-      initialValue: profile?.website ?? "",
-    },
+    { id: "fullName", label: "Nume", initialValue: profile?.full_name ?? "" },
   ]}
-  editButtonTitle="Edit Profile"
+  editButtonTitle="Editează profil"
   editLink="/account/settings/edit_profile"
 />
 
@@ -40,36 +30,36 @@
   title="Email"
   editable={false}
   fields={[{ id: "email", initialValue: user?.email || "" }]}
-  editButtonTitle="Change Email"
+  editButtonTitle="Schimbă email"
   editLink="/account/settings/change_email"
 />
 
 <SettingsModule
-  title="Password"
+  title="Parolă"
   editable={false}
   fields={[{ id: "password", initialValue: "••••••••••••••••" }]}
-  editButtonTitle="Change Password"
+  editButtonTitle="Schimbă parola"
   editLink="/account/settings/change_password"
 />
 
 <SettingsModule
-  title="Email Subscription"
+  title="Abonare email"
   editable={false}
   fields={[
     {
       id: "subscriptionStatus",
-      initialValue: profile?.unsubscribed ? "Unsubscribed" : "Subscribed",
+      initialValue: profile?.unsubscribed ? "Dezabonat" : "Abonat",
     },
   ]}
-  editButtonTitle="Change Subscription"
+  editButtonTitle="Schimbă abonarea"
   editLink="/account/settings/change_email_subscription"
 />
 
 <SettingsModule
-  title="Danger Zone"
+  title="Zonă periculoasă"
   editable={false}
   dangerous={true}
   fields={[]}
-  editButtonTitle="Delete Account"
+  editButtonTitle="Șterge contul"
   editLink="/account/settings/delete_account"
 />

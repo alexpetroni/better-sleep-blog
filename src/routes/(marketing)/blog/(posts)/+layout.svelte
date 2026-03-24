@@ -18,7 +18,7 @@
       }
     }
     if (!searchPost) {
-      error(404, "Blog post not found")
+      error(404, "Articolul nu a fost găsit")
     }
     return searchPost
   }
@@ -90,8 +90,8 @@
 
 <article class="prose mx-auto py-12 px-6 font-sans">
   <div class="text-sm text-highlight">
-    {currentPost.parsedDate?.toLocaleDateString("en-US", {
-      month: "short",
+    {currentPost.parsedDate?.toLocaleDateString("ro-RO", {
+      month: "long",
       day: "numeric",
       year: "numeric",
     })}

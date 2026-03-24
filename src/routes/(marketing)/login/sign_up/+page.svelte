@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-  <title>Sign up</title>
+  <title>Creează cont</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Sign Up</h1>
+<h1 class="text-2xl font-bold mb-6">Creează cont</h1>
 <Auth
   supabaseClient={data.supabase}
   view="sign_up"
@@ -21,5 +21,5 @@
   additionalData={undefined}
 />
 <div class="text-l text-slate-800 mt-4 mb-2">
-  Have an account? <a class="underline" href="/login/sign_in">Sign in</a>.
+  Ai deja cont? <a class="underline" href="/login/sign_in">Conectare</a>.
 </div>

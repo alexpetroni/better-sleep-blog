@@ -45,11 +45,11 @@
     message = "",
     fields,
     formTarget = "",
-    successTitle = "Success",
+    successTitle = "Succes",
     successBody = "",
     editButtonTitle = null,
     editLink = null,
-    saveButtonTitle = "Save",
+    saveButtonTitle = "Salvează",
   }: Props = $props()
 
   const handleSubmit: SubmitFunction = () => {
@@ -193,7 +193,7 @@
           size: 'sm',
         })} mt-3 min-w-[145px]"
       >
-        Return to Settings
+        Înapoi la setări
       </a>
     {/if}
   </div>

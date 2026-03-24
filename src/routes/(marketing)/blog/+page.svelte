@@ -20,7 +20,7 @@
       <img
         class="flex-none w-5 h-5 object-contain"
         src="/images/rss.svg"
-        alt="rss feed"
+        alt="flux RSS"
       />
     </a>
   </div>
@@ -35,8 +35,8 @@
         <div class="py-6 px-6">
           <div class="text-xl">{post.title}</div>
           <div class="text-sm text-highlight">
-            {post.parsedDate?.toLocaleDateString("en-US", {
-              month: "short",
+            {post.parsedDate?.toLocaleDateString("ro-RO", {
+              month: "long",
               day: "numeric",
               year: "numeric",
             })}

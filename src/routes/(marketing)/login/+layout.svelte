@@ -20,7 +20,7 @@
   <div class="flex flex-col w-64 lg:w-80">
     {@render children?.()}
     <div class="mt-8 {isEurope ? 'block' : 'hidden'}">
-      🍪 Logging in uses Cookies 🍪
+      🍪 Autentificarea folosește Cookie-uri 🍪
     </div>
   </div>
 </div>

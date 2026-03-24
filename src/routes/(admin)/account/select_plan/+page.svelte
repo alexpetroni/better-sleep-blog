@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Select a Plan</title>
+  <title>Alege un plan</title>
 </svelte:head>
 
 <div
@@ -11,15 +11,15 @@
 >
   <div class="flex flex-col w-full px-6">
     <div>
-      <h1 class="text-2xl font-bold mb-2">Select a Plan</h1>
+      <h1 class="text-2xl font-bold mb-2">Alege un plan</h1>
       <div class="mb-6">
-        View our <a
+        Vezi <a
           href="/pricing"
           target="_blank"
-          class="underline underline-offset-4">pricing page</a
-        > for details.
+          class="underline underline-offset-4">pagina de prețuri</a
+        > pentru detalii.
       </div>
-      <PricingModule callToAction="Select Plan" />
+      <PricingModule callToAction="Alege plan" />
     </div>
   </div>
 </div>

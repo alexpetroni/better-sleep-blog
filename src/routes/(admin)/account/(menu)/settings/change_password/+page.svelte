@@ -26,11 +26,11 @@
   })
 
   let sendBtnDisabled = $state(false)
-  let sendBtnText = $state("Send Set Password Email")
+  let sendBtnText = $state("Trimite email pentru setare parolă")
   let sentEmail = $state(false)
   let sendForgotPassword = () => {
     sendBtnDisabled = true
-    sendBtnText = "Sending..."
+    sendBtnText = "Se trimite..."
 
     let email = user?.email
     if (email) {
@@ -41,42 +41,42 @@
         .then((d) => {
           sentEmail = d.error ? false : true
           sendBtnDisabled = false
-          sendBtnText = "Send Forgot Password Email"
+          sendBtnText = "Trimite email resetare parolă"
         })
     }
   }
 </script>
 
 <svelte:head>
-  <title>Change Password</title>
+  <title>Schimbă parola</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Change Password</h1>
+<h1 class="text-2xl font-bold mb-6">Schimbă parola</h1>
 
 {#if hasPassword}
   <SettingsModule
-    title="Change Password"
+    title="Schimbă parola"
     editable={true}
-    saveButtonTitle="Change Password"
-    successTitle="Password Changed"
-    successBody="On next sign in, use your new password."
+    saveButtonTitle="Schimbă parola"
+    successTitle="Parola a fost schimbată"
+    successBody="La următoarea conectare, folosește noua parolă."
     formTarget="/account/api?/updatePassword"
     fields={[
       {
         id: "newPassword1",
-        label: "New Password",
+        label: "Parolă nouă",
         initialValue: "",
         inputType: "password",
       },
       {
         id: "newPassword2",
-        label: "Confirm New Password",
+        label: "Confirmă parola nouă",
         initialValue: "",
         inputType: "password",
       },
       {
         id: "currentPassword",
-        label: "Current Password",
+        label: "Parola curentă",
         initialValue: "",
         inputType: "password",
       },
@@ -88,17 +88,17 @@
   >
     <div class="flex flex-col gap-y-4">
       {#if usingOAuth}
-        <div class="font-bold">Set Password By Email</div>
+        <div class="font-bold">Setează parola prin email</div>
         <div>
-          You use oAuth to sign in ("Sign in with Github" or similar). You can
-          continue to access your account using only oAuth if you like!
+          Te conectezi prin oAuth ("Conectare cu Github" sau similar). Poți
+          continua să accesezi contul doar prin oAuth dacă dorești!
         </div>
       {:else}
-        <div class="font-bold">Change Password By Email</div>
+        <div class="font-bold">Schimbă parola prin email</div>
       {/if}
       <div>
-        The button below will send you an email at {user?.email} which will allow
-        you to set your password.
+        Butonul de mai jos îți va trimite un email la {user?.email} care îți va
+        permite să îți setezi parola.
       </div>
       <Button
         variant="outline"
@@ -111,8 +111,8 @@
       {#if sentEmail}
         <Alert variant="success">
           <AlertDescription>
-            Sent email! Please check your inbox and use the link to set your
-            password.
+            Email trimis! Verifică inbox-ul și folosește linkul pentru a-ți seta
+            parola.
           </AlertDescription>
         </Alert>
       {/if}
