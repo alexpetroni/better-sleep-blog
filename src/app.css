@@ -83,8 +83,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-family-heading: var(--font-heading);
-  --font-family-body: var(--font-body);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
 }
 
 @layer base {
@@ -92,7 +92,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
   }
   h1,
   h2,
