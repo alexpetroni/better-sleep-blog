@@ -1,3 +1,4 @@
+<p>Dacă te ridici dimineața cu rigiditate în spate care dispare după 15 minute de mișcare, salteaua poate fi problema, nu vârsta și nu poziția de dormit. Biomecanica somnului e reală și cercetată, dar industria o îngroapă sub termeni ca "ortopedic" și "anatomic" care nu înseamnă nimic standardizat.</p>
 <ul>
   <li>O saltea inadecvată compromite alinierea coloanei vertebrale, crește numărul de schimbări de poziție în somn și poate produce dureri cronice de spate pe care multe persoane nu le leagă de suprafața de dormit.</li>
   <li>Nu există o saltea universal bună. Fermitatea optimă depinde de poziția predominantă de dormit, greutatea corporală și problemele individuale de coloană.</li>

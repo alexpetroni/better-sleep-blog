@@ -1,3 +1,4 @@
+<p>Dacă trezirile nocturne vin cu o regularitate aproape mecanică, la aceleași ore, cu aceeași stare de alertă corporală, tiparul e diferit de insomnia obișnuită. Creierul încearcă să proceseze o experiență care a rămas fragmentată, iar al treilea ciclu REM din noapte, cel mai intens, e momentul în care procesarea emoțională atinge un prag critic.</p>
 <ul>
   <li>Traumele nerezolvate pot genera treziri repetitive la aceleași ore, cel mai frecvent între 2 și 4 dimineața, un tipar pe care somnul normal nu îl produce</li>
   <li>În timpul somnului REM, creierul procesează emoțional evenimentele zilei, dar la persoanele cu PTSD această procesare se blochează sau declanșează alarme false</li>

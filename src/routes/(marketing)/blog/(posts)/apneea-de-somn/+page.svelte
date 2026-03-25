@@ -1,3 +1,4 @@
+<p>Dacă dormi 7-8 ore și te trezești constant obosit, există o cauză care afectează 15-30% din bărbații adulți și care poate trece nediagnosticată ani de zile. Mecanismul e simplu: musculatura căilor respiratorii se relaxează în somn, respirația se oprește zeci sau sute de ori pe noapte, iar creierul intervine de fiecare dată cu o micro-trezire de care nu ești conștient.</p>
 <ul>
   <li>Apneea obstructivă de somn înseamnă sute de micro-opriri ale respirației pe noapte, fiecare urmată de o micro-trezire de care persoana nu e conștientă</li>
   <li>Creierul intervine de fiecare dată ca să redeschidă căile respiratorii, dar fiecare intervenție fragmentează somnul profund și REM</li>

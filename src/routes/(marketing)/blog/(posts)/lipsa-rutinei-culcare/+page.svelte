@@ -1,3 +1,4 @@
+<p>Dacă te culci la 23 în cursul săptămânii și la 2 noaptea în weekend, corpul tău trece printr-un mic jet lag la fiecare tranziție. Ceasul circadian nu se adaptează la variație, ci se desincronizează, iar efectele merg mult dincolo de oboseala de luni dimineața.</p>
 <ul>
   <li>Ce e social jet lag-ul și de ce weekendul tău te sabotează la fel de mult ca un zbor transatlantic</li>
   <li>Cum funcționează ceasul circadian și de ce are nevoie de consistență pentru a funcționa optim</li>

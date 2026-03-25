@@ -1,3 +1,4 @@
+<p>Creierul nu își închide urechile când adormi. Fiecare sunet din mediu e evaluat, filtrat și procesat, chiar dacă dimineața nu ai nicio amintire despre asta. Dacă locuiești într-un mediu zgomotos și te trezești obosit fără explicație, costul acelor micro-evaluări nocturne merită înțeles.</p>
 <ul>
   <li>De ce creierul tău nu se "oprește" niciodată cu adevărat din ascultat, nici în somn</li>
   <li>Cum micro-trezirile provocate de zgomot îți fragmentează noaptea fără să-ți dai seama</li>

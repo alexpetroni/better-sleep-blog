@@ -1,3 +1,4 @@
+<p>Un hormon numit vasopresină reduce în mod normal producția de urină pe timp de noapte cu aproape 50%. Dacă acest mecanism slăbește, sau dacă altceva crește volumul de urină nocturnă, vezica se umple înainte ca somnul să-și termine ciclurile. Iar cauzele depășesc cu mult cantitatea de apă băută seara.</p>
 <ul>
   <li>Nicturie înseamnă trezirea de cel puțin o dată pe noapte ca să urinezi, iar de la două ori în sus, impactul asupra calității somnului devine măsurabil</li>
   <li>Rinichii nu filtrează la fel toată ziua: un hormon numit vasopresină (ADH) reduce producția de urină noaptea, iar scăderea lui cu vârsta e una din cauzele principale</li>

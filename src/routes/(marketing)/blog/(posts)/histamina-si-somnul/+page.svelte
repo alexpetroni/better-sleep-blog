@@ -1,3 +1,4 @@
+<p>Histamina este unul dintre cele mai puternice semnale de veghe din creier, iar o parte din ea vine direct din ce ai în farfurie seara. Dacă nopțile tale variază imprevizibil, cu unele excelente și altele inexplicabil proaste, legătura s-ar putea să fie în cina, nu în stres.</p>
 <ul>
   <li>Histamina e unul dintre principalii neurotransmițători care mențin starea de veghe, iar antihistaminicele produc somnolență exact prin blocarea acestui efect</li>
   <li>Intoleranța la histamină apare când corpul nu descompune histamina suficient de repede, de obicei din cauza deficitului de enzimă DAO (diaminoxidază)</li>

@@ -1,49 +1,83 @@
 <script lang="ts">
   import { sortedBlogPosts, blogInfo } from "./posts"
+
+  const PAGE_TITLE = blogInfo.name
+  const PAGE_DESCRIPTION = blogInfo.description
+  const RSS_LABEL = "flux RSS"
+
+  function estimateReadingTime(description: string): number {
+    const words = description.split(/\s+/).length
+    return Math.max(5, Math.min(8, Math.ceil(words / 10)))
+  }
 </script>
 
 <svelte:head>
-  <title>{blogInfo.name}</title>
-  <meta name="description" content={blogInfo.description} />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESCRIPTION} />
 </svelte:head>
 
-<div class="py-8 lg:py-12 px-6 max-w-lg mx-auto">
-  <div
-    class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
-  >
-    <div
-      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight"
+<div class="max-w-3xl mx-auto px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+  <!-- Header -->
+  <div class="text-center mb-14">
+    <h1 class="text-3xl md:text-4xl tracking-tight text-foreground">
+      {PAGE_TITLE}
+    </h1>
+    <p class="mt-3 text-muted-foreground text-lg font-light">
+      {PAGE_DESCRIPTION}
+    </p>
+    <a
+      href="/blog/rss.xml"
+      target="_blank"
+      rel="noreferrer"
+      class="inline-flex items-center gap-1.5 mt-4 text-xs text-muted-foreground hover:text-foreground transition-colors"
     >
-      {blogInfo.name}
-    </div>
-    <a href="/blog/rss.xml" target="_blank" rel="noreferrer">
-      <img
-        class="flex-none w-5 h-5 object-contain"
-        src="/images/rss.svg"
-        alt="flux RSS"
-      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-3.5 h-3.5"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"
+        />
+      </svg>
+      {RSS_LABEL}
     </a>
   </div>
-  <div class="text-lg text-center">{blogInfo.description}</div>
 
-  {#each sortedBlogPosts as post}
-    <a href={post.link}>
-      <div
-        class="rounded-xl border bg-card shadow-xl my-6 flex-row overflow-hidden flex"
-      >
-        <div class="flex-none w-6 md:w-32 bg-secondary"></div>
-        <div class="py-6 px-6">
-          <div class="text-xl">{post.title}</div>
-          <div class="text-sm text-highlight">
-            {post.parsedDate?.toLocaleDateString("ro-RO", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
+  <!-- Article list -->
+  <div class="flex flex-col gap-1">
+    {#each sortedBlogPosts as post}
+      <a href={post.link} class="group block">
+        <article
+          class="py-6 border-b border-border/40 last:border-b-0 transition-colors"
+        >
+          <div class="flex items-baseline gap-3 flex-wrap">
+            <time
+              class="text-xs text-muted-foreground tabular-nums shrink-0"
+              datetime={post.date}
+            >
+              {post.parsedDate?.toLocaleDateString("ro-RO", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
+            </time>
+            <span class="text-xs text-muted-foreground/60">
+              &middot; {estimateReadingTime(post.description)} min
+            </span>
           </div>
-          <div class="text-slate-500">{post.description}</div>
-        </div>
-      </div>
-    </a>
-  {/each}
+          <h2
+            class="mt-1.5 text-lg font-semibold leading-snug text-foreground group-hover:text-primary transition-colors"
+            style="font-family: var(--font-body);"
+          >
+            {post.title}
+          </h2>
+          <p class="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+            {post.description}
+          </p>
+        </article>
+      </a>
+    {/each}
+  </div>
 </div>

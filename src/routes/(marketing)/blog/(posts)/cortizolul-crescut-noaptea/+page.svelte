@@ -1,3 +1,4 @@
+<p>Cortizolul are un ritm precis pe parcursul a 24 de ore, cu un minim pe la miezul nopții care face somnul profund posibil. Dacă acel minim nu mai e chiar minim, creierul primește un semnal de "e dimineață" cu ore înainte de ceas, iar gândurile care apar imediat după nu sunt cauza trezirii, ci consecința ei.</p>
 <ul>
   <li>Trezirile repetate între 2 și 4 dimineața nu sunt aleatorii. Coincid cu un moment vulnerabil din ciclul cortizolului.</li>
   <li>Axa HPA (hipotalamus-hipofiză-suprarenale) funcționează ca un termostat. Stresul cronic o recalibrează în sus, iar cortizolul nocturn rămâne ridicat.</li>

@@ -1,3 +1,4 @@
+<p>Somnul profund e faza în care corpul repară țesuturi, reduce inflamația și recalibrează pragul de durere. E exact ceea ce o persoană cu durere cronică are cel mai mult nevoie, și totuși durerea e unul dintre cele mai eficiente perturbatoare ale acestei faze. Trei nopți de somn fragmentat sunt suficiente ca pragul de durere să scadă cu 25% chiar și la o persoană sănătoasă.</p>
 <ul>
   <li>Relația dintre durere și somn e bidirecțională: durerea fragmentează somnul, iar somnul prost amplifică durerea a doua zi</li>
   <li>Somnul profund (stadiul N3) e faza în care corpul produce cel mai mult hormon de creștere și repară țesuturile, iar durerea cronică îl reduce cu 25-40%</li>

@@ -1,3 +1,4 @@
+<p>Stomacul produce acid cu un pH între 1 și 3, suficient de puternic încât să dizolve un cui mic. Noaptea, trei mecanisme de protecție slăbesc simultan: gravitația nu mai ajută, saliva scade cu 80%, iar producția de acid atinge vârful circadian, exact între 22 și 2 dimineața.</p>
 <ul>
   <li>Sfincterul esofagian inferior funcționează ca o supapă între stomac și esofag, iar poziția culcat elimină avantajul gravitației care îl ajută să rămână închis</li>
   <li>Producția de acid gastric urmează un ritm circadian și crește natural între orele 22 și 2 dimineața, exact când majoritatea oamenilor dorm</li>

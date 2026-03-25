@@ -1,3 +1,4 @@
+<p>Corpul are nevoie să-și scadă temperatura cu peste un grad pentru a iniția somnul. Digestia unei cine grele face exact opusul, generând căldură, activând sistemul nervos enteric și ocupând ficatul tocmai în intervalul lui de vârf nocturn. Dacă te trezești între 1 și 3 dimineața după o masă consistentă, legătura e directă și fiziologic explicabilă.</p>
 <ul>
   <li>Digestia alimentelor grele activează sistemul nervos simpatic și crește temperatura corpului, ambele opuse fiziologiei naturale a adormirii</li>
   <li>Ficatul procesează lipidele cel mai intens între orele 1 și 3 dimineața; o cină grasă încarcă acest interval și poate cauza treziri</li>

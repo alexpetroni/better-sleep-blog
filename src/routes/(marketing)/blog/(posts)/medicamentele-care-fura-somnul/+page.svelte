@@ -1,3 +1,4 @@
+<p>Beta-blocantele pot suprima melatonina nocturnă cu până la 80%. Antidepresivele SSRI cresc mișcările involuntare ale picioarelor în somn la un sfert din pacienți. Dacă iei un medicament zilnic și dormi prost, legătura merită verificată, pentru că 10-15% din cazurile de insomnie cronică au o componentă medicamentoasă directă.</p>
 <ul>
   <li>Peste 20 de clase de medicamente comune au insomnia ca efect secundar documentat, dar majoritatea pacienților nu fac legătura</li>
   <li>Beta-blocantele (metoprolol, atenolol, propranolol) suprimă secreția nocturnă de melatonină, mecanismul prin care produc insomnie</li>

@@ -1,3 +1,4 @@
+<p>Somnul profund necesită o scădere a temperaturii corporale cu 1 până la 1,5 grade. Dacă cearșafurile sau pijamaua sunt din materiale sintetice care rețin căldura și nu absorb transpirația, acest proces e încetinit, iar corpul compensează prin microtreziri de care nici nu ești conștient. Materialul de pe piele contează mai mult decât pare.</p>
 <ul>
   <li>De ce cearșafurile și pijamaua pot sabota termoreglarea nocturnă fără să-ți dai seama</li>
   <li>Cum funcționează țesăturile sintetice versus cele naturale în raport cu căldura și umiditatea</li>

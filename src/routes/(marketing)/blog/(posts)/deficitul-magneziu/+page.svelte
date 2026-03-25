@@ -1,3 +1,4 @@
+<p>Magneziul amplifică semnalul GABA (frâna naturală a creierului), participă la producția de melatonină și reglează relaxarea musculară. Deficitul lui afectează aproximativ jumătate din populația adultă, dar analizele standard de sânge îl ratează aproape întotdeauna. Dacă adormi greu, te trezești cu mușchi încordați sau ai crampe nocturne, conexiunea merită explorată.</p>
 <ul>
   <li>Magneziul participă la peste 600 de reacții enzimatice în corp, inclusiv cele care reglează relaxarea musculară, activitatea GABA și conversia triptofanului în melatonină</li>
   <li>Deficitul subclinic de magneziu afectează aproximativ 50-60% din populația adultă și rămâne aproape întotdeauna nediagnosticat prin analizele standard de sânge</li>

@@ -1,3 +1,4 @@
+<p>Treizeci de minute pierdute pe noapte par nesemnificative, dar la sfârșitul unei luni ai acumulat un deficit de zece ore, cu efecte măsurabile asupra insulinei, inflamației și telomerilor. Dacă strategia ta de recuperare se bazează pe weekenduri lungi de somn, cercetarea arată că mecanismele metabolice afectate nu se resetează la fel de ușor ca cele cognitive.</p>
 <h2>Ce vei găsi în acest articol</h2>
 <ul>
   <li>Cum se acumulează deficitul de somn, chiar și când pierzi doar 30 de minute pe noapte</li>
@@ -8,7 +9,6 @@
   <li>Strategii de recuperare treptată care au suport științific</li>
   <li>De ce prevenția rămâne singura abordare cu adevărat durabilă</li>
 </ul>
-<h2>Deschidere</h2>
 <p>Există o iluzie confortabilă pe care mulți o cultivă fără să realizeze: ideea că poți tăia din somn în timpul săptămânii și apoi să recuperezi totul sâmbătă și duminică. Pare logic. Pare drept. Și, într-o anumită măsură foarte limitată, corpul chiar încearcă să facă asta. Problema apare când transformi această strategie într-un mod de viață. Ceea ce funcționează ocazional devine, pe termen lung, o formă de auto-sabotaj metabolic pe care weekendul nu o poate repara.</p>
 <p>Gândește-te la asta ca la un cont bancar. Dacă cheltuiești mai mult decât câștigi într-o săptămână, poți acoperi diferența dintr-un fond de urgență. Dar dacă faci asta lună de lună, fondul se golește, dobânzile cresc, și la un moment dat sistemul se prăbușește. Cu somnul e similar, doar că „dobânzile" se manifestă prin inflamație cronică, rezistență la insulină și degradare celulară. Și nu primești notificări de avertizare decât când lucrurile sunt deja avansate.</p>
 <h2>Ce se întâmplă de fapt</h2>

@@ -1,3 +1,4 @@
+<p>Alcoolul te ajută să adormi mai repede, asta e real. Dar pe măsură ce ficatul îl metabolizează în orele care urmează, creierul intră într-o stare de hiperexcitabilitate compensatorie care fragmentează exact fazele de somn de care ai cea mai mare nevoie. Dacă te trezești între 2 și 4 dimineața după o seară cu un pahar sau două, mecanismul e foarte specific și merită înțeles.</p>
 <ul>
   <li>Cum alcoolul te ajută să adormi mai repede dar îți sabotează exact fazele de somn care contează</li>
   <li>Ce se întâmplă în corp când metabolizezi alcoolul în timpul nopții și de ce te trezești la 3 dimineața</li>

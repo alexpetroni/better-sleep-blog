@@ -1,3 +1,4 @@
+<p>Există o formă de inflamație care nu doare, nu se vede și nu produce simptome pe care să le recunoști. Dar citokinele pe care le eliberează ajung la creier și modifică structura somnului, scurtând exact fazele în care corpul se repară. Poți dormi 8 ore și tot să te trezești nerefăcut, pentru că problema nu e durata, ci ce se întâmplă pe interior.</p>
 <ul>
   <li>Inflamația cronică de grad scăzut nu produce simptome evidente. Nu doare, nu e roșie, nu se umflă. Dar perturbă mecanismele somnului profund în mod măsurabil.</li>
   <li>Citokinele proinflamatorii IL-6 și TNF-alfa, eliberate în inflamația cronică, fragmentează somnul și reduc proporția de somn cu unde lente (stadiul cel mai restaurativ).</li>

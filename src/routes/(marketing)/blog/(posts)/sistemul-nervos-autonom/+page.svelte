@@ -1,3 +1,4 @@
+<p>Sistemul nervos autonom funcționează ca un balans între accelerator și frână. Dacă stresul cronic ține acceleratorul apăsat prea mult timp, frâna parasimpatică slăbește, iar corpul rămâne în alertă chiar și atunci când te culci. Nu e o problemă de voință, ci de calibrare a unui sistem care a învățat că trebuie să fie mereu pregătit.</p>
 <ul>
   <li>Sistemul nervos autonom are două ramuri principale: simpaticul (accelerator) și parasimpaticul (frână). Somnul necesită activarea frânei. Când frâna nu funcționează, corpul rămâne în alertă chiar și în pat.</li>
   <li>Stresul cronic nu crește doar cortizolul. Recalibrează întregul sistem nervos autonom, făcând ramura simpatică dominantă și reducând capacitatea parasimpaticului de a prelua controlul seara.</li>

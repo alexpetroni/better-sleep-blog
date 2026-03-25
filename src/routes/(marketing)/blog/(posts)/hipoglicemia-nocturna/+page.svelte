@@ -1,3 +1,4 @@
+<p>Creierul arde 5-6 grame de glucoză pe oră chiar și în somn, iar ficatul funcționează ca un generator de rezervă care îl alimentează. Dacă generatorul rămâne fără combustibil pe la 2 dimineața, corpul eliberează adrenalină și cortizol ca să mobilizeze zahăr de urgență, iar trezirea vine cu transpirații și anxietate, nu cu foame.</p>
 <ul>
   <li>Corpul consumă glucoză și în somn, iar creierul singur arde 5-6 grame pe oră, non-stop.</li>
   <li>Când rezervele de glicogen din ficat se epuizează noaptea, organismul eliberează adrenalină și cortizol ca să mobilizeze zahăr de urgență, iar aceste hormone te trezesc.</li>

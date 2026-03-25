@@ -1,3 +1,4 @@
+<p>Sfaturile despre somn circulă într-un spațiu în care temperatura camerei și cristalele de pe noptieră sunt prezentate cu același grad de certitudine. Dacă vrei să investești timp și bani în lucruri care chiar contează, ai nevoie de un filtru care să separe dovezile solide de speculație.</p>
 <ul>
   <li>Ce spune dovada științifică actuală despre efectele Wi-Fi și câmpurilor electromagnetice asupra somnului</li>
   <li>De ce argumentul cu plantele care "produc oxigen noaptea" nu rezistă la un calcul simplu</li>

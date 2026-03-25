@@ -6,39 +6,42 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: hsl(40 80% 98%);
-  --foreground: hsl(262 100% 13%);
+  --background: hsl(40 25% 97%);
+  --foreground: hsl(220 15% 20%);
   --card: hsl(0 0% 100%);
-  --card-foreground: hsl(262 100% 13%);
+  --card-foreground: hsl(220 15% 20%);
   --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(262 100% 13%);
-  --primary: hsl(262 100% 13%);
-  --primary-foreground: hsl(40 80% 98%);
-  --secondary: hsl(253 82% 85%);
-  --secondary-foreground: hsl(262 100% 13%);
-  --muted: hsl(34 86% 91%);
-  --muted-foreground: hsl(260 16% 45%);
-  --accent: hsl(333 82% 95%);
-  --accent-foreground: hsl(333 71% 35%);
-  --destructive: hsl(0 72% 51%);
+  --popover-foreground: hsl(220 15% 20%);
+  --primary: hsl(160 25% 32%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(160 15% 90%);
+  --secondary-foreground: hsl(160 25% 25%);
+  --muted: hsl(40 15% 93%);
+  --muted-foreground: hsl(220 10% 46%);
+  --accent: hsl(160 12% 93%);
+  --accent-foreground: hsl(160 25% 25%);
+  --destructive: hsl(0 60% 50%);
   --destructive-foreground: hsl(0 0% 98%);
-  --success: hsl(157 59% 52%);
+  --success: hsl(157 50% 45%);
   --success-foreground: hsl(0 0% 100%);
-  --warning: hsl(45 93% 58%);
+  --warning: hsl(45 80% 55%);
   --warning-foreground: hsl(38 30% 15%);
-  --border: hsl(34 30% 88%);
-  --input: hsl(34 30% 88%);
-  --ring: hsl(262 100% 13%);
-  --highlight: hsl(333 71% 51%);
-  --sidebar: hsl(40 80% 98%);
-  --sidebar-foreground: hsl(262 100% 13%);
-  --sidebar-primary: hsl(262 100% 13%);
-  --sidebar-primary-foreground: hsl(40 80% 98%);
-  --sidebar-accent: hsl(34 86% 91%);
-  --sidebar-accent-foreground: hsl(262 100% 13%);
-  --sidebar-border: hsl(34 30% 88%);
-  --sidebar-ring: hsl(262 100% 13%);
-  --radius: 0.5rem;
+  --border: hsl(40 15% 89%);
+  --input: hsl(40 15% 89%);
+  --ring: hsl(160 25% 32%);
+  --highlight: hsl(160 20% 40%);
+  --sidebar: hsl(40 25% 97%);
+  --sidebar-foreground: hsl(220 15% 20%);
+  --sidebar-primary: hsl(160 25% 32%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(40 15% 93%);
+  --sidebar-accent-foreground: hsl(220 15% 20%);
+  --sidebar-border: hsl(40 15% 89%);
+  --sidebar-ring: hsl(160 25% 32%);
+  --radius: 0.625rem;
+
+  --font-heading: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
@@ -79,6 +82,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-family-heading: var(--font-heading);
+  --font-family-body: var(--font-body);
 }
 
 @layer base {
@@ -86,7 +92,13 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
   }
 }
 
@@ -106,4 +118,27 @@ button[disabled].authBtn::before {
   font-size: 14px;
   content: "Se încarcă...";
   color: var(--primary-foreground);
+}
+
+/* Article prose customization */
+.prose {
+  --tw-prose-body: hsl(220 15% 25%);
+  --tw-prose-headings: hsl(220 15% 15%);
+  --tw-prose-links: hsl(160 25% 32%);
+  --tw-prose-bold: hsl(220 15% 15%);
+  --tw-prose-quotes: hsl(220 10% 46%);
+  --tw-prose-quote-borders: hsl(160 15% 80%);
+  --tw-prose-hr: hsl(40 15% 89%);
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+.prose p,
+.prose li,
+.prose blockquote {
+  font-family: var(--font-body);
 }

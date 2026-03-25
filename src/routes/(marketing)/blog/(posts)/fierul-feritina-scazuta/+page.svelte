@@ -1,3 +1,4 @@
+<p>Dacă seara, în pat, simți o agitație inexplicabilă în picioare care dispare doar când te miști, e posibil ca problema să nu fie stresul sau oboseala. Fierul joacă un rol direct în producția de dopamină, iar când rezervele scad sub un anumit prag, circuitele motorii din creier devin instabile, exact în momentul în care ai nevoie de liniște.</p>
 <ul>
   <li>Sindromul picioarelor neliniștite (SPN) afectează 5-10% din populația adultă și e una dintre cele mai frecvente cauze tratabile de insomnie pe care medicii de familie rareori o investighează corect.</li>
   <li>Senzațiile din picioare nu sunt crampe și nu sunt durere clasică. Sunt o nevoie aproape imposibil de descris de a mișca picioarele, care se agravează seara și noaptea, exact când vrei să stai liniștit.</li>

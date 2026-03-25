@@ -1,3 +1,4 @@
+<p>Ca să inițieze somnul, corpul face ceva contraintuitiv: încălzește mâinile și picioarele ca să disipeze căldura din interior. Dacă dormitorul e prea cald, căldura nu are unde să se ducă, temperatura centrală nu scade, iar creierul nu primește semnalul termic că e noapte. Gradul de vasodilatație al extremităților e un predictor al adormirii mai puternic decât nivelul de melatonină.</p>
 <ul>
   <li>Corpul trebuie să-și scadă temperatura centrală cu 1-1.5 grade Celsius ca să inițieze somnul, iar o cameră prea caldă împiedică acest proces</li>
   <li>Termoregulatia nocturnă funcționează prin vasodilatație periferică: mâinile și picioarele disipă căldura, iar sânge cald din centrul corpului se răcește</li>

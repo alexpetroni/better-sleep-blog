@@ -1,3 +1,4 @@
+<p>Melatonina e construită pas cu pas dintr-un aminoacid din mâncare, printr-un lanț biochimic care depinde de vitamina B6, zinc, fier, folat și B12 la fiecare etapă. Dacă oricare dintre acești cofactori lipsește, lanțul încetinește și producția de melatonină scade. Deficitele subclinice ale acestor nutrienți sunt frecvente și rareori asociate cu somnul, dar creierul le simte în fiecare noapte.</p>
 <ul>
   <li>Melatonina nu apare din nimic: e produsul final al unui lanț biochimic care începe cu triptofanul și necesită cofactori preciși la fiecare etapă</li>
   <li>Vitamina B6 e cofactorul cel mai critic, fără ea conversia 5-HTP în serotonină se blochează aproape complet</li>

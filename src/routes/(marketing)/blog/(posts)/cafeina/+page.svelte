@@ -1,3 +1,4 @@
+<p>Cafeina nu te face mai odihnit, ci temporar incapabil să percepi cât de obosit ești. Blochează receptorii de adenozină din creier, iar când efectul trece, toată oboseala acumulată lovește deodată. Dacă bei o cafea la ora 14, la miezul nopții ai încă suficientă cafeină activă în sistem cât să reducă somnul profund, chiar dacă adormi fără probleme.</p>
 <ul>
   <li>Cum funcționează cafeina la nivel neuronal și de ce te face să te simți treaz fără să fii odihnit</li>
   <li>Timpul de înjumătățire de 5-6 ore și ce înseamnă asta practic pentru cafeaua de la ora 14</li>

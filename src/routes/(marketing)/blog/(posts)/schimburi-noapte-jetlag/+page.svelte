@@ -1,3 +1,4 @@
+<p>Când mănânci la 3 noaptea, ficatul primește semnalul „e zi", în timp ce ceasul central din creier știe că e noapte. Această dezaliniere internă, în care organele tale funcționează pe fusuri orare diferite, produce efecte metabolice și cardiovasculare care depășesc cu mult simpla oboseală.</p>
 <h2>Ce vei găsi în acest articol</h2>
 <ul>
   <li>Ce este dezalinierea circadiană și de ce munca în schimburi o provoacă inevitabil</li>
@@ -8,7 +9,6 @@
   <li>Cum să pregătești camera de dormit pentru somnul diurn</li>
   <li>Principii de alimentație adaptată pentru lucrătorii în schimburi</li>
 </ul>
-<h2>Deschidere</h2>
 <p>Dacă ai lucrat vreodată o tură de noapte, știi senzația aceea particulară de a ieși de la serviciu la 6 dimineața, cu soarele răsărind, în timp ce restul lumii se trezește. Totul în jurul tău spune „zi nouă, energie, început". Totul din corpul tău spune „am nevoie să dorm". Și totuși, ajuns acasă, descoperi că somnul nu vine ușor. Lumina se strecoară pe lângă perdele, vecinii încep să facă zgomot, telefonul sună, și creierul tău este confuz cu privire la ce anume ar trebui să facă.</p>
 <p>Aceasta nu este doar o problemă de confort. Dezalinierea cronică dintre ritmul tău circadian intern și programul impus de muncă este un factor de risc real pentru o serie de boli grave. Și nu vorbesc despre un risc teoretic, vag, la orizontul îndepărtat. Vorbesc despre modificări măsurabile care apar în luni, nu în decenii. Asistente medicale, șoferi de camion, lucrători în fabrici, personalul de securitate, paramedici, toți aceștia plătesc un preț biologic pe care majoritatea angajatorilor nici nu îl recunosc.</p>
 <h2>Ce se întâmplă de fapt</h2>

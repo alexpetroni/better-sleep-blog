@@ -1,3 +1,4 @@
+<p>Mișcarea ajută somnul prin trei mecanisme concrete: metabolizarea cortizolului acumulat, creșterea adenozinei care construiește presiunea de somn și scăderea temperaturii centrale după efort. Dar tipul de exercițiu, ora la care îl faci și intensitatea contează la fel de mult ca faptul că te miști.</p>
 <h2>Ce vei găsi în acest articol</h2>
 <ul>
   <li>Cum metabolizează exercițiul fizic cortizolul și adrenalina acumulate în timpul zilei</li>
@@ -8,7 +9,6 @@
   <li>Cum să alegi între mișcare dimineața și mișcare seara</li>
   <li>Ce faci când ești obosit dar agitat și nu poți sta liniștit</li>
 </ul>
-<h2>Deschidere</h2>
 <p>Probabil ai auzit sfatul „fă sport și vei dormi mai bine" de suficiente ori încât a început să sune ca un clișeu. Și ca multe clișee, conține un sâmbure de adevăr învelit în imprecizie. Da, exercițiul fizic îmbunătățește somnul. Dar nu orice exercițiu, nu la orice oră, și nu în orice doză. Relația dintre mișcare și somn este mai nuanțată decât o face să pară un afiș motivațional.</p>
 <p>Ce vreau să explorez aici este mecanica reală din spatele acestei relații. Pentru că atunci când înțelegi de ce mișcarea ajută somnul, poți lua decizii mult mai bune despre ce tip de activitate alegi, când o programezi și cum o adaptezi în funcție de starea ta de moment. Nu e vorba despre reguli rigide, ci despre o logică biologică pe care o poți folosi flexibil.</p>
 <h2>Ce se întâmplă de fapt</h2>

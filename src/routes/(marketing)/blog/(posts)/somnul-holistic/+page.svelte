@@ -1,3 +1,4 @@
+<p>Somnul de noapte nu începe când te bagi în pat. E produsul final al deciziilor din cele 16 ore anterioare: lumina pe care ai primit-o dimineața, mișcarea pe care ai făcut-o sau nu, ce ai mâncat și la ce oră, cum ai gestionat stresul. Dacă te concentrezi doar pe rutina de seară, e ca și cum ai încerca să repari nutriția ocupându-te exclusiv de cină.</p>
 <ul>
   <li>De ce somnul de noapte nu poate fi separat de modul în care trăiești ziua</li>
   <li>Rolul luminii naturale din primele ore ale dimineții în setarea ceasului biologic</li>

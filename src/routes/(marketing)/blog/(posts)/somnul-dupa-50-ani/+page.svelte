@@ -1,3 +1,4 @@
+<p>Somnul se modifică cu vârsta, dar distanța dintre „se modifică" și „trebuie să fie prost" e mult mai mare decât presupun majoritatea oamenilor. Dacă ai pus somnul neodihnitor pe seama anilor, s-ar putea să ratezi o apnee tratabilă, un efect medicamentos corectabil sau o schimbare de obiceiuri care nu mai funcționează ca la 35 de ani.</p>
 <h2>Ce vei găsi în acest articol</h2>
 <ul>
   <li>Cum se modifică arhitectura somnului odată cu vârsta: reducerea somnului profund N3 și creșterea trezirilor nocturne</li>
@@ -8,7 +9,6 @@
   <li>De ce „dorm mai puțin pentru că sunt bătrân" este o explicație comodă dar periculoasă</li>
   <li>Strategii eficiente fără somnifere pentru îmbunătățirea somnului la maturitate</li>
 </ul>
-<h2>Deschidere</h2>
 <p>Există o narațiune pe care o aud frecvent de la persoanele trecute de 50 de ani: „Așa e la vârsta mea, nu mai dorm ca înainte, m-am obișnuit." Și o spun cu un fel de resemnare calmă, ca și cum somnul prost ar fi o taxă inevitabilă a înaintării în vârstă, la fel ca părul alb sau ochelarii de citit. Problema cu această narațiune nu este că e complet falsă. Somnul se modifică, da, cu vârsta. Dar distanța dintre „se modifică" și „trebuie să fie prost" este mult mai mare decât presupun majoritatea oamenilor.</p>
 <p>Ceea ce se întâmplă adesea este că schimbările fiziologice normale se suprapun cu condiții medicale tratabile, cu efecte secundare ale medicamentelor, cu obiceiuri de somn care au funcționat la 35 de ani dar nu mai funcționează la 60, și cu o lipsă generalizată de investigare din partea sistemului medical. Rezultatul: oameni care dorm prost de ani de zile, care pun totul pe seama vârstei, și care nu primesc niciodată ajutorul pe care l-ar putea primi.</p>
 <h2>Ce se întâmplă de fapt</h2>

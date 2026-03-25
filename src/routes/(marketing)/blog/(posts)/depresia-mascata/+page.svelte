@@ -1,3 +1,4 @@
+<p>Trezirea precoce repetitivă, în jurul orei 4, cu o luciditate care nu lasă loc somn, e unul dintre cele mai specifice semnale biologice ale depresiei. Cortizolul crește prematur în a doua parte a nopții, iar creierul interpretează acest semnal ca pe venirea dimineții. Dacă tiparul se repetă de câteva săptămâni, merită privit dincolo de igienă a somnului.</p>
 <ul>
   <li>Trezirea precoce repetitivă (4-5 dimineața) cu imposibilitatea de a readormi e unul dintre cele mai specifice semne biologice ale depresiei</li>
   <li>Depresia perturbă arhitectura somnului prin disfuncții în sistemele de serotonină și noradrenalină, scurtând fazele profunde și modificând ciclurile REM</li>

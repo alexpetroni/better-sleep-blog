@@ -6,6 +6,13 @@
   import { goto } from "$app/navigation"
   import { dev } from "$app/environment"
 
+  const PAGE_TITLE = "Căutare"
+  const PLACEHOLDER = "Caută articole..."
+  const LOADING_TEXT = "Se încarcă..."
+  const ERROR_TEXT =
+    "Eroare la conectarea la căutare. Te rugăm să încerci din nou mai târziu."
+  const NO_RESULTS_TEXT = "Nu s-au găsit rezultate"
+
   const fuseOptions = {
     keys: [
       { name: "title", weight: 3 },
@@ -50,14 +57,12 @@
   }
   let results: Result[] = $state([])
 
-  // searchQuery is $page.url.hash minus the "#" at the beginning if present
   let searchQuery = $state(decodeURIComponent(page.url.hash.slice(1) ?? ""))
   $effect(() => {
     if (fuse) {
       results = fuse.search(searchQuery)
     }
   })
-  // Update the URL hash when searchQuery changes so the browser can bookmark/share the search results
   $effect(() => {
     if (browser && window.location.hash.slice(1) !== searchQuery) {
       goto("#" + searchQuery, { keepFocus: true })
@@ -87,72 +92,61 @@
 <svelte:window onkeydown={onKeyDown} />
 
 <svelte:head>
-  <title>Căutare</title>
+  <title>{PAGE_TITLE}</title>
   <meta name="description" content="Caută pe site-ul nostru." />
 </svelte:head>
 
-<div class="py-8 lg:py-12 px-6 max-w-lg mx-auto">
-  <div
-    class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
-  >
-    <div
-      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-highlight"
-    >
-      Căutare
-    </div>
-  </div>
-  <div
-    class="flex items-center gap-2 mt-10 mb-5 w-full rounded-md border border-input px-3"
-  >
+<div class="max-w-2xl mx-auto px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+  <h1 class="text-3xl md:text-4xl tracking-tight text-foreground text-center">
+    {PAGE_TITLE}
+  </h1>
+
+  <div class="mt-8 mb-6">
     <input
       id="search-input"
       type="text"
-      class="flex h-9 w-full bg-transparent py-1 text-base shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none"
-      placeholder="Căutare"
+      class="flex h-11 w-full rounded-lg border border-border bg-card px-4 py-2 text-base shadow-sm transition-colors placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary/40"
+      placeholder={PLACEHOLDER}
       bind:value={searchQuery}
       onfocus={() => (focusItem = 0)}
-      aria-label="Search input"
+      aria-label={PAGE_TITLE}
     />
   </div>
 
   {#if loading && searchQuery.length > 0}
-    <div class="text-center mt-10 text-highlight text-xl">Se încarcă...</div>
+    <p class="text-center mt-10 text-muted-foreground">{LOADING_TEXT}</p>
   {/if}
 
   {#if error}
-    <div class="text-center mt-10 text-highlight text-xl">
-      Eroare la conectarea la căutare. Te rugăm să încerci din nou mai târziu.
-    </div>
+    <p class="text-center mt-10 text-muted-foreground">{ERROR_TEXT}</p>
   {/if}
 
   {#if !loading && searchQuery.length > 0 && results.length === 0 && !error}
-    <div class="text-center mt-10 text-highlight text-xl">Nu s-au găsit rezultate</div>
+    <p class="text-center mt-10 text-muted-foreground">{NO_RESULTS_TEXT}</p>
     {#if dev}
-      <div class="text-center mt-4 font-mono">
-        Development mode only message: if you're missing content, rebuild your
-        local search index with `npm run build`
-      </div>
+      <p class="text-center mt-4 text-xs font-mono text-muted-foreground/60">
+        Development mode: rebuild search index with `npm run build`
+      </p>
     {/if}
   {/if}
 
-  <div>
+  <div class="flex flex-col gap-1">
     {#each results as result, i}
       <a
         href={result.item.path || "/"}
         id="search-result-{i + 1}"
-        class="rounded-xl border bg-card shadow-xl my-6 flex-row overflow-hidden flex focus:mx-[-10px] focus:my-[-5px] focus:border-4 focus:border-secondary"
+        class="group block py-5 border-b border-border/40 last:border-b-0 focus:outline-none focus:bg-accent/30 rounded-lg focus:px-4 transition-colors"
       >
-        <div class="flex-none w-6 md:w-32 bg-secondary"></div>
-        <div class="py-6 px-6">
-          <div class="text-xl">{result.item.title}</div>
-          <div class="text-sm text-highlight">
-            {result.item.path}
-          </div>
-          <div class="text-slate-500">{result.item.description}</div>
-        </div>
+        <h2
+          class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
+          style="font-family: var(--font-body);"
+        >
+          {result.item.title}
+        </h2>
+        <p class="mt-1 text-sm text-muted-foreground leading-relaxed">
+          {result.item.description}
+        </p>
       </a>
     {/each}
   </div>
-
-  <div></div>
 </div>

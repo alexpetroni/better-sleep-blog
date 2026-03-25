@@ -9,149 +9,173 @@
   let { children }: Props = $props()
 
   let mobileMenuOpen = $state(false)
+
+  const NAV_LINKS = [
+    { href: "/blog", label: "Articole" },
+    { href: "/contact_us", label: "Contact" },
+    { href: "/search", label: "Căutare" },
+  ]
+
+  const FOOTER_NAV = [
+    { href: "/", label: "Acasă" },
+    { href: "/blog", label: "Articole" },
+    { href: "/contact_us", label: "Contact" },
+    { href: "/search", label: "Căutare" },
+  ]
 </script>
 
-<div class="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
-  <div class="flex items-center h-16 container mx-auto px-4">
-    <div class="flex-1">
-      <a class="text-xl font-bold hover:opacity-80 transition-opacity" href="/"
-        >{WebsiteName}</a
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-background/80 backdrop-blur-md">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <a
+        href="/"
+        class="font-heading text-xl tracking-tight text-foreground hover:text-primary transition-colors"
+        style="font-family: var(--font-heading);"
       >
-    </div>
-    <div class="flex-none">
-      <ul class="hidden sm:flex items-center gap-1 px-1 font-bold text-lg">
-        <li class="md:mx-2">
+        {WebsiteName}
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden sm:flex items-center gap-8">
+        {#each NAV_LINKS as link}
           <a
-            href="/blog"
-            class="rounded-md px-3 py-1.5 transition-colors hover:bg-accent/10"
-            >Blog</a
+            href={link.href}
+            class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-        </li>
-        <li class="md:mx-2">
-          <a
-            href="/account"
-            class="rounded-md px-3 py-1.5 transition-colors hover:bg-accent/10"
-            >Cont</a
-          >
-        </li>
-        <li class="md:mx-2">
-          <a
-            href="/contact_us"
-            class="rounded-md px-3 py-1.5 transition-colors hover:bg-accent/10"
-            >Contact</a
-          >
-        </li>
-        <li class="md:mx-0">
-          <a
-            href="/search"
-            aria-label="Căutare"
-            class="inline-flex items-center justify-center rounded-full h-9 w-9 transition-colors hover:bg-accent/10"
-          >
-            <svg
-              fill="#000000"
-              class="w-6 h-6"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                d="M17.545 15.467l-3.779-3.779a6.15 6.15 0 0 0 .898-3.21c0-3.417-2.961-6.377-6.378-6.377A6.185 6.185 0 0 0 2.1 8.287c0 3.416 2.961 6.377 6.377 6.377a6.15 6.15 0 0 0 3.115-.844l3.799 3.801a.953.953 0 0 0 1.346 0l.943-.943c.371-.371.236-.84-.135-1.211zM4.004 8.287a4.282 4.282 0 0 1 4.282-4.283c2.366 0 4.474 2.107 4.474 4.474a4.284 4.284 0 0 1-4.283 4.283c-2.366-.001-4.473-2.109-4.473-4.474z"
-                fill="currentColor"
-              /></svg
-            >
+            {link.label}
           </a>
-        </li>
-      </ul>
-      <div class="sm:hidden">
-        <button
-          onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
-          class="inline-flex items-center justify-center rounded-full h-9 w-9 transition-colors hover:bg-accent/10"
-          aria-label="Toggle menu"
+        {/each}
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button
+        onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+        class="sm:hidden inline-flex items-center justify-center rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground transition-colors"
+        aria-label="Meniu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.5"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
+          {#if mobileMenuOpen}
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h7"
-            /></svg
+              d="M6 18L18 6M6 6l12 12"
+            />
+          {:else}
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          {/if}
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    {#if mobileMenuOpen}
+      <nav class="sm:hidden pb-4 border-t border-border/50">
+        <div class="flex flex-col pt-3 gap-1">
+          {#each NAV_LINKS as link}
+            <a
+              href={link.href}
+              class="px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onclick={() => (mobileMenuOpen = false)}
+            >
+              {link.label}
+            </a>
+          {/each}
+        </div>
+      </nav>
+    {/if}
+  </div>
+  <div class="border-b border-border/40"></div>
+</header>
+
+<!-- Main content -->
+<main>
+  {@render children?.()}
+</main>
+
+<!-- Spacer pushes footer to bottom -->
+<div class="grow"></div>
+
+<!-- Footer -->
+<footer class="border-t border-border/40 mt-20">
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <div
+          class="text-lg tracking-tight mb-3"
+          style="font-family: var(--font-heading);"
+        >
+          {WebsiteName}
+        </div>
+        <p class="text-sm text-muted-foreground leading-relaxed max-w-xs">
+          Informații verificate și sfaturi practice pentru un somn odihnitor și o
+          viață mai sănătoasă.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex flex-col gap-2.5">
+        <span
+          class="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1"
+        >
+          Navigare
+        </span>
+        {#each FOOTER_NAV as link}
+          <a
+            href={link.href}
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-        </button>
-        {#if mobileMenuOpen}
-          <!-- svelte-ignore a11y_no_static_element_interactions -->
-          <div
-            class="fixed inset-0 z-40 bg-black/20"
-            onclick={() => (mobileMenuOpen = false)}
-            onkeydown={(e) => e.key === "Escape" && (mobileMenuOpen = false)}
-          ></div>
-          <div
-            class="absolute right-4 mt-2 z-50 rounded-xl border bg-popover p-2 shadow-lg w-52 font-bold"
+            {link.label}
+          </a>
+        {/each}
+      </nav>
+
+      <!-- Partner -->
+      <div>
+        <span
+          class="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3 block"
+        >
+          Partener
+        </span>
+        <a
+          href="https://zenyth.ro"
+          class="group block"
+          target="_blank"
+          rel="noopener"
+        >
+          <span
+            class="text-base font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            <a
-              href="/blog"
-              class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Blog</a
-            >
-            <a
-              href="/account"
-              class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Cont</a
-            >
-            <a
-              href="/contact_us"
-              class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Contact</a
-            >
-            <a
-              href="/search"
-              class="block rounded-md px-3 py-2 hover:bg-accent/10"
-              onclick={() => (mobileMenuOpen = false)}>Căutare</a
-            >
-          </div>
-        {/if}
+            Zenyth.ro
+          </span>
+          <p class="text-sm text-muted-foreground mt-1 leading-relaxed">
+            Suplimente alimentare premium pentru un somn odihnitor și sănătos.
+          </p>
+          <span
+            class="inline-block text-xs font-medium text-primary mt-2 group-hover:underline"
+          >
+            Află mai multe &rarr;
+          </span>
+        </a>
       </div>
     </div>
+
+    <div
+      class="border-t border-border/40 mt-12 pt-8 text-xs text-muted-foreground text-center"
+    >
+      &copy; {new Date().getFullYear()} {WebsiteName}
+    </div>
   </div>
-</div>
-
-<div class="">
-  {@render children?.()}
-</div>
-
-<!-- Spacer grows so the footer can be at bottom on short pages -->
-<div class="grow"></div>
-<div class="">
-  <div class="border-t max-w-[1000px] mx-auto"></div>
-  <footer
-    class="flex flex-col md:flex-row p-10 gap-x-48 lg:gap-x-64 xl:gap-x-96 justify-center text-base"
-  >
-    <nav class="flex flex-col">
-      <span
-        class="font-semibold text-sm uppercase tracking-wider opacity-80 mb-2"
-        >Explorează</span
-      >
-      <a class="hover:underline mb-1" href="/">Acasă</a>
-      <a class="hover:underline my-1" href="/blog">Blog</a>
-      <a class="hover:underline my-1" href="/contact_us">Contact</a>
-    </nav>
-    <aside class="mt-6 md:mt-0">
-      <span
-        class="font-semibold text-sm uppercase tracking-wider opacity-80 mb-2 block"
-        >Partener</span
-      >
-      <a class="max-w-[260px] block" href="https://zenyth.ro">
-        <div class="font-bold text-3xl mb-1">Zenyth.ro</div>
-        <div class="font-medium mb-3">Suplimente alimentare premium</div>
-        <div class="font-light">
-          Descoperă suplimentele Zenyth pentru un somn odihnitor și sănătos.
-        </div>
-        <div class="underline underline-offset-4 text-sm font-bold mt-2">
-          Află mai multe
-        </div>
-      </a>
-    </aside>
-  </footer>
-</div>
+</footer>

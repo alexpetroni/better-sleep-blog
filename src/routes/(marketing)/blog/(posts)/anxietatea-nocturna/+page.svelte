@@ -1,3 +1,4 @@
+<p>Grijile nu apar noaptea, ele sunt acolo toată ziua, ținute sub prag de distracțiile continue ale minții ocupate. Când te culci și elimini toate aceste filtre, cortexul prefrontal e deja epuizat, iar amigdala preia controlul. Mecanismul are o logică neurobiologică clară și, odată înțeles, devine mai ușor de gestionat.</p>
 <ul>
   <li>De ce creierul tău alege exact momentul culcării pentru a-ți prezenta inventarul tuturor grijilor</li>
   <li>Mecanismul neurologic din spatele ruminației nocturne și rolul lipsei de distracții</li>

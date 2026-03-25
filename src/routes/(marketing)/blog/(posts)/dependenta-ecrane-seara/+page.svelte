@@ -1,3 +1,4 @@
+<p>Dacă un filtru de lumină albastră ar rezolva problema ecranelor seara, conversația s-ar fi încheiat demult. Efectul principal nu vine din fotoni, ci din modul în care conținutul digital activează circuitul dopaminic, exact circuitul care ține creierul în modul de căutare și explorare, opusul stării necesare adormirii.</p>
 <ul>
   <li>De ce problema ecranelor seara nu e doar despre lumina albastră, ci despre ce face conținutul digital cu chimia creierului tău</li>
   <li>Cum social media, doomscrolling-ul și notificările activează circuitul dopaminic exact când ai nevoie de liniște</li>
